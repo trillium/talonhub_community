@@ -125,7 +125,8 @@ modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
     "alt": "alt",  #'alter': 'alt',
     "control": "ctrl",  #'troll':   'ctrl',
-    "shift": "shift",  #'sky':     'shift',
+    "shift": "shift",  
+    'sky':     'shift',
     "super": "super",
 }
 if app.platform == "mac":
@@ -249,6 +250,8 @@ simple_keys = [
 alternate_keys = {
     "wipe": "backspace",
     "delete": "backspace",
+    "break": "enter",
+    "clap": "enter",
     #'junk': 'backspace',
     "forward delete": "delete",
     "page up": "pageup",
