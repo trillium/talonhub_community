@@ -16,13 +16,13 @@ settings():
     user.mouse_continuous_scroll_amount = 80
 
     # Stop continuous scroll/gaze scroll with a pop
-    user.mouse_enable_pop_stops_scroll = 1
+    user.mouse_enable_pop_stops_scroll = 0
 
     # Enable pop click with 'control mouse' mode.
     # 0 = off
     # 1 = on with eyetracker but not zoom mouse mode
     # 2 = on but not with zoom mouse mode
-    user.mouse_enable_pop_click = 1
+    user.mouse_enable_pop_click = 0
 
     # Uncomment the below to enable mouse scroll down using hiss noise
     # user.mouse_enable_hiss_scroll = 1
@@ -57,7 +57,7 @@ settings():
     # how to format (capitalize, space) dictation-mode speech by selecting &
     # copying surrounding text before inserting. This can be slow and may not
     # work in some applications. You may wish to enable this on a
-    # per-application basis.
+    # per-rapplication basis.
     # user.context_sensitive_dictation = 1
 
     # How to resize windows moved across physical screens (eg. via `snap next`).

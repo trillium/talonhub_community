@@ -21,6 +21,16 @@ go right: edit.right()
 go up: edit.up()
 go down: edit.down()
 
+# Adding north east south west
+west: edit.left()
+east: edit.right()
+north: edit.up()
+south: edit.down()
+
+# More east west
+go line east: edit.line_start()
+go line west: edit.line_end()
+
 go line start: edit.line_start()
 go line end: edit.line_end()
 

@@ -1,0 +1,13 @@
+{
+	"cluck": {	
+		"sounds": ["tongue_click_mouth_o"],
+		"threshold": {
+			">power": 20,
+			">probability": 0.9999
+			
+		},
+		"throttle": {
+			"cluck": 0.12
+		}
+	}
+}
