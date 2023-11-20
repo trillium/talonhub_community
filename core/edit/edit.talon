@@ -189,6 +189,7 @@ new line below | slap: edit.line_insert_down()
     insert(" ")
 
 # Undo/redo
+nope: edit.undo()
 undo that: edit.undo()
 redo that: edit.redo()
 
