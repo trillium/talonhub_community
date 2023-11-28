@@ -25,16 +25,16 @@ settings():
     user.mouse_enable_pop_click = 0
 
     # Uncomment the below to enable mouse scroll down using hiss noise
-    # user.mouse_enable_hiss_scroll = 1
+    user.mouse_enable_hiss_scroll = 1
 
     # When enabled, the 'Scroll Mouse' GUI will not be shown.
-    user.mouse_hide_mouse_gui = 0
+    user.mouse_hide_mouse_gui = 1
 
     # Hide cursor when mouse_wake is called to enable zoom mouse
     user.mouse_wake_hides_cursor = 0
 
     # The amount to scroll up/down (equivalent to mouse wheel on Windows by default)
-    user.mouse_wheel_down_amount = 120
+    user.mouse_wheel_down_amount = 20
 
     # The amount to scroll left/right
     user.mouse_wheel_horizontal_amount = 40
@@ -67,4 +67,4 @@ settings():
     #user.window_snap_screen = "size aware"
 
 # Uncomment this to enable the curse yes/curse no commands (show hide mouse cursor). See issue #688.
-# tag(): user.mouse_cursor_commands_enable
+tag(): user.mouse_cursor_commands_enable
