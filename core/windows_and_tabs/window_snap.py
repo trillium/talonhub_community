@@ -232,6 +232,28 @@ _snap_positions = {
         1,
         1,
     ),
+    # Three quarters side view
+    # .--.--.--.    
+    # |  |  |  |
+    # '--'--'--'
+    # "center third": RelativeScreenPos(1 / 3, 0, 2 / 3, 1),
+    "left quarter": RelativeScreenPos(0, 0, 1 / 4, 1),
+    "left bottom quarter": RelativeScreenPos(0, 0.5, 1 / 4, 1),
+    "bottom left quarter": RelativeScreenPos(0, 0.5, 1 / 4, 1),
+    "left top quarter": RelativeScreenPos(0, 0, 1 / 4, 0.5),
+    "top left quarter": RelativeScreenPos(0, 0, 1 / 4, 0.5),
+    "right quarter": RelativeScreenPos(3 / 4, 0, 1, 1),
+    "right bottom quarter": RelativeScreenPos(3 / 4, 0.5, 1, 1),
+    "bottom right quarter": RelativeScreenPos(3 / 4, 0.5, 1, 1),
+    "top right quarter": RelativeScreenPos(3 / 4, 0, 1, 0.5),
+    "right three quarters": RelativeScreenPos(1 / 4, 0, 1, 1),
+    "left three quarters": RelativeScreenPos(0, 0, 3 / 4, 1),
+    # "right two thirds": RelativeScreenPos(
+    #     1 / 3,
+    #     0,
+    #     1,
+    #     1,
+    # ),
     # Quarters
     # .---.---.
     # |---|---|
