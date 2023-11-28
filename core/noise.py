@@ -2,7 +2,7 @@
 Map noises (like pop) to actions so they can have contextually differing behavior
 """
 
-from talon import Module, actions, cron, noise
+from talon import Module, actions, cron, noise, app
 
 mod = Module()
 hiss_cron = None
@@ -16,6 +16,7 @@ class Actions:
         https://noise.talonvoice.com/static/previews/pop.mp3 for an
         example.
         """
+
 
     def noise_trigger_hiss(active: bool):
         """
@@ -35,5 +36,5 @@ def noise_trigger_hiss_debounce(active: bool):
         actions.user.noise_trigger_hiss(active)
 
 
-noise.register("pop", lambda _: actions.user.noise_trigger_pop())
-noise.register("hiss", noise_trigger_hiss_debounce)
+# noise.register("pop", lambda _: actio
+# hiss_debounce)
