@@ -6,7 +6,7 @@ import logging
 import time
 import os
 
-from talon import Module, resource, events
+from talon import Module, resource, events, actions
 from talon.debug import log_exception
 from talon.experimental.parrot import ParrotSystem, ParrotDelegate, ParrotFrame
 # from talon_init import TALON_HOME
@@ -293,7 +293,8 @@ class Delegate(ParrotDelegate):
     def pattern_match(self, frame: ParrotFrame) -> set[str]:
         if self.debug:
             winner_label, winner_prob = next(iter(frame.classes.items()))
-            events.write('parrot', f"predict {winner_label} {winner_prob * 100:.2f}% pow={frame.power:.2f} f0={frame.f0:.3f} f1={frame.f1:.3f} f2={frame.f2:.3f}")
+            if winner_prob * 100 > 95:
+                events.write('parrot', f"predict {winner_label} {winner_prob * 100:.2f}% pow={frame.power:.2f} f0={frame.f0:.3f} f1={frame.f1:.3f} f2={frame.f2:.3f}")
 
         active: set[str] = set()
         for pattern in self.patterns.values():
@@ -303,7 +304,7 @@ class Delegate(ParrotDelegate):
 
         return active
 
-parrot_delegate = Delegate(debug=False)
+parrot_delegate = Delegate(debug=True)
 system = ParrotSystem(model_path, parrot_delegate)
 
 @resource.watch(pattern_path)
