@@ -73,7 +73,7 @@ setting_mouse_wake_hides_cursor = mod.setting(
 setting_mouse_hide_mouse_gui = mod.setting(
     "mouse_hide_mouse_gui",
     type=int,
-    default=0,
+    default=1,
     desc="When enabled, the 'Scroll Mouse' GUI will not be shown.",
 )
 setting_mouse_continuous_scroll_amount = mod.setting(
@@ -258,6 +258,8 @@ def show_cursor_helper(show):
 @ctx.action_class("user")
 class UserActions:
     def noise_trigger_pop():
+        # actions.core.repeat_phrase(1)
+        # actions.user.hud_add_log("event", "pop")
         if setting_mouse_enable_pop_stops_scroll.get() >= 1 and (
             gaze_job or scroll_job
         ):
@@ -281,6 +283,7 @@ class UserActions:
             )
             if should_click:
                 ctrl.mouse_click(button=0, hold=16000)
+        
 
     def noise_trigger_hiss(active: bool):
         if setting_mouse_enable_hiss_scroll.get():
