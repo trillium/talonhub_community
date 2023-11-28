@@ -1,6 +1,6 @@
 window (new | open): app.window_open()
 window next: app.window_next()
-window last: app.window_previous()
+window (last | previous): app.window_previous()
 window close: app.window_close()
 window hide: app.window_hide()
 focus <user.running_applications>: user.switcher_focus(running_applications)
