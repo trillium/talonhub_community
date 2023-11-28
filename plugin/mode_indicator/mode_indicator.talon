@@ -1,10 +1,10 @@
 settings():
     # Don't show mode indicator by default
-    user.mode_indicator_show = 0
+    user.mode_indicator_show = 1
     # 30pixels diameter
     user.mode_indicator_size = 30
     # Center horizontally
-    user.mode_indicator_x = 0.5
+    user.mode_indicator_x = 0.437
     # Align top
     user.mode_indicator_y = 0
     # Slightly transparent

@@ -1,4 +1,4 @@
-from talon import Module, app, registry, scope, skia, ui
+from talon import Module, app, registry, scope, skia, ui, actions
 from talon.canvas import Canvas
 from talon.screen import Screen
 from talon.skia.canvas import Canvas as SkiaCanvas
@@ -111,7 +111,45 @@ def on_draw(c: SkiaCanvas):
 
     c.paint.style = c.paint.Style.FILL
     c.paint.color = color_mode
+    # c.paint.color = "EE0000"
     c.draw_circle(x, y, radius)
+
+    # red_border = True
+    # # Create a red border if red_border is True
+    # if red_border:
+    #     redx, redy = x, y
+    #     red_radius = c.rect.height / 2.2
+    #     c.paint.style = c.paint.Style.STROKE
+    #     c.paint.color = "EE0000"
+    #     c.draw_circle(redx,redy, red_radius)
+
+def on_draw_red(c: SkiaCanvas):
+    color_mode, color_gradient = get_colors()
+    x, y = c.rect.center.x, c.rect.center.y
+    radius = c.rect.height / 2 - 2
+
+    c.paint.shader = skia.Shader.radial_gradient(
+        (x, y), radius, ["330000", color_gradient]
+    )
+
+    c.paint.imagefilter = ImageFilter.drop_shadow(1, 1, 1, 1, color_gradient)
+
+    c.paint.style = c.paint.Style.STROKE
+    # c.paint.color = color_mode
+    c.paint.color = "EE0000"
+    # c.draw_circle(x, y, radius)
+
+    active_mic = actions.sound.active_microphone()
+    render_red_border = active_mic == "None"
+    actions.user.hud_add_log("warning",f"mic: {active_mic}")
+
+    # Create a red border if red_border is True
+    if render_red_border:
+        redx, redy = x, y
+        red_radius = c.rect.height / 7
+        c.paint.style = c.paint.Style.FILL
+        c.paint.color = "EE0000"
+        c.draw_circle(redx,redy, red_radius)
 
 
 def move_indicator():
@@ -138,12 +176,15 @@ def move_indicator():
 def show_indicator():
     global canvas
     canvas = Canvas.from_rect(Rect(0, 0, 0, 0))
+    canvas = Canvas.from_rect(Rect(0, 0, 0, 0))
     canvas.register("draw", on_draw)
+    canvas.register("draw", on_draw_red)
 
 
 def hide_indicator():
     global canvas
     canvas.unregister("draw", on_draw)
+    canvas.unregister("draw", on_draw_red)
     canvas.close()
     canvas = None
 
