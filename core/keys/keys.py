@@ -124,7 +124,8 @@ ctx = Context()
 modifier_keys = {
     # If you find 'alt' is often misrecognized, try using 'alter'.
     "alt": "alt",  #'alter': 'alt',
-    "control": "ctrl",  #'troll':   'ctrl',
+    "control": "ctrl",  
+    'troll':   'ctrl',
     "shift": "shift",  
     'sky':     'shift',
     "super": "super",
@@ -153,6 +154,7 @@ punctuation_words = {
     "colon": ":",
     "forward slash": "/",
     "question mark": "?",
+    "question": "?",
     "exclamation mark": "!",
     "exclamation": "!",
     "exclamation point": "!",
