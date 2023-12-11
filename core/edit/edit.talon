@@ -31,8 +31,8 @@ south: edit.down()
 go line east: edit.line_start()
 go line west: edit.line_end()
 
-go line start | head: edit.line_start()
-go line end | tail: edit.line_end()
+go line start | [go] head: edit.line_start()
+go line end | [go] tail: edit.line_end()
 
 go way left:
     edit.line_start()
