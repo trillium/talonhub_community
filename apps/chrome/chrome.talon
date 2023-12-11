@@ -16,5 +16,5 @@ tab search <user.text>$:
     insert("{text}")
     key(down)
 
-toggle dark:
+toggle dark [mode]:
     key(alt-shift-d)
