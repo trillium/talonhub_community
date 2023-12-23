@@ -18,3 +18,9 @@ parrot(ssss):
 parrot(shhh):
         # user.noise_shush_start()
         # user.noise_shush_start()
+
+# use one of the following labels:
+        # bg_3mics,
+        # talking_3mics,
+        # alviolar_3mic,
+        # click_3mics
