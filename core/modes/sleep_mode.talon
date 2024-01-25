@@ -2,11 +2,15 @@ mode: sleep
 -
 settings():
     # Stop continuous scroll/gaze scroll with a pop
-    user.mouse_enable_pop_stops_scroll = 0
-    # Enable pop click with 'control mouse' mode
+    user.mouse_enable_pop_stops_scroll = false
+    # Stop pop click with 'control mouse' mode
     user.mouse_enable_pop_click = 0
     # Stop mouse scroll down using hiss noise
+<<<<<<< HEAD
     user.mouse_enable_hiss_scroll = 0    
+=======
+    user.mouse_enable_hiss_scroll = false
+>>>>>>> c6e1969ab516d509f51b9c8acd01bd35d2262d28
 
 #================================================================================
 # Commands to wake Talon

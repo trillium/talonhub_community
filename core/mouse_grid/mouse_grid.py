@@ -13,13 +13,13 @@ from talon.skia import Paint, Rect
 from talon.types.point import Point2d
 
 mod = Module()
-narrow_expansion = mod.setting(
+mod.setting(
     "grid_narrow_expansion",
     type=int,
     default=0,
     desc="""After narrowing, grow the new region by this many pixels in every direction, to make things immediately on edges easier to hit, and when the grid is at its smallest, it allows you to still nudge it around""",
 )
-grids_put_one_bottom_left = mod.setting(
+mod.setting(
     "grids_put_one_bottom_left",
     type=bool,
     default=False,
@@ -29,7 +29,7 @@ grids_put_one_bottom_left = mod.setting(
 mod.tag("mouse_grid_showing", desc="Tag indicates whether the mouse grid is showing")
 mod.tag(
     "mouse_grid_enabled",
-    desc="Deprecated: do not use.  Activates legacy m grid command",
+    desc="Deprecated: do not use. Activates legacy m grid command",
 )
 ctx = Context()
 
@@ -150,10 +150,20 @@ class MouseSnapNine:
 
         def draw_text(offset_x, offset_y, width, height):
             canvas.paint.text_align = canvas.paint.TextAlign.CENTER
+<<<<<<< HEAD
             i = 0
             for row in range(self.rows):
                 for col in range(self.cols):
                     text_string = f'{self.chars[i].upper()}'
+=======
+            for row in range(3):
+                for col in range(3):
+                    text_string = ""
+                    if settings.get("user.grids_put_one_bottom_left"):
+                        text_string = f"{(2 - row)*3+col+1}"
+                    else:
+                        text_string = f"{row*3+col+1}"
+>>>>>>> c6e1969ab516d509f51b9c8acd01bd35d2262d28
                     text_rect = canvas.paint.measure_text(text_string)[1]
                     background_rect = text_rect.copy()
                     background_rect.center = Point2d(
@@ -207,6 +217,7 @@ class MouseSnapNine:
 
     def calc_narrow(self, boxes, rect):  
         rect = rect.copy()
+<<<<<<< HEAD
         # bdr = narrow_expansion.get()
         bdr = settings.get('user.grid_narrow_expansion')
 
@@ -227,6 +238,17 @@ class MouseSnapNine:
         rect.width = (rect.width // self.cols) + bdr * 2
         rect.height = (rect.height // self.rows) + bdr * 2
         
+=======
+        bdr = settings.get("user.grid_narrow_expansion")
+        row = int(which - 1) // 3
+        col = int(which - 1) % 3
+        if settings.get("user.grids_put_one_bottom_left"):
+            row = 2 - row
+        rect.x += int(col * rect.width // 3) - bdr
+        rect.y += int(row * rect.height // 3) - bdr
+        rect.width = (rect.width // 3) + bdr * 2
+        rect.height = (rect.height // 3) + bdr * 2
+>>>>>>> c6e1969ab516d509f51b9c8acd01bd35d2262d28
         return rect
 
     def narrow(self, boxes, move=True):
@@ -323,3 +345,7 @@ class GridActions:
         """Close the active grid"""
         ctx.tags = []
         mg.close()
+
+    def grid_is_active():
+        """check if grid is already active"""
+        return mg.active
