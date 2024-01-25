@@ -195,5 +195,5 @@ redo that: edit.redo()
 
 # Save
 file (save | safety): edit.save()
-^(safety | disk)+$: edit.save(-)
+^(safety | disk)+$: edit.save()
 file save all: edit.save_all()
