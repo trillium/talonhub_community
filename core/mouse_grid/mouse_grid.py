@@ -2,6 +2,7 @@
 # - Add north east south west for easier clicking on edges
 # - Add applying grid to current mouse position
 # - Add Click history
+# - Add indication that the mapping is outside the screen in zoom-in mode
 
 # courtesy of https://github.com/timo/
 # see https://github.com/timo/talon_scripts
