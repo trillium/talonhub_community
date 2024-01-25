@@ -27,11 +27,7 @@ settings():
     user.mouse_enable_hiss_scroll = false
 
     # When enabled, the 'Scroll Mouse' GUI will not be shown.
-<<<<<<< HEAD
-    user.mouse_hide_mouse_gui = 1
-=======
-    user.mouse_hide_mouse_gui = false
->>>>>>> c6e1969ab516d509f51b9c8acd01bd35d2262d28
+    user.mouse_hide_mouse_gui = true
 
     # Hide cursor when mouse_wake is called to enable zoom mouse
     user.mouse_wake_hides_cursor = false
@@ -64,13 +60,8 @@ settings():
     # how to format (capitalize, space) dictation-mode speech by selecting &
     # copying surrounding text before inserting. This can be slow and may not
     # work in some applications. You may wish to enable this on a
-<<<<<<< HEAD
-    # per-rapplication basis.
-    # user.context_sensitive_dictation = 1
-=======
     # per-application basis.
     # user.context_sensitive_dictation = true
->>>>>>> c6e1969ab516d509f51b9c8acd01bd35d2262d28
 
     # How to resize windows moved across physical screens (eg. via `snap next`).
     # Default is 'proportional', which preserves window size : screen size ratio.
