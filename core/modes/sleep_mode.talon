@@ -51,7 +51,3 @@ parrot(cluck):
     user.mouse_sleep()
     speech.disable()
     user.engine_sleep()
-
-# Pokey sleep words
-drowse [<phrase>]$: speech.toggle()
-drowse <phrase> resume$: skip()

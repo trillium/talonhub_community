@@ -24,3 +24,8 @@ mode: dictation
     user.engine_sleep()
 
 ^talon sleep [<phrase>]$: speech.disable()
+
+# Pokey sleep words
+drowse [<phrase>]$: speech.disable()
+drowse <phrase> resume$: skip()
+
