@@ -29,3 +29,6 @@ mode: dictation
 drowse [<phrase>]$: speech.disable()
 drowse <phrase> resume$: skip()
 
+dross [<phrase>]$: speech.disable()
+dross <phrase> resume$: skip()
+
