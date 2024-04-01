@@ -1,4 +1,4 @@
-from talon import Module, app, registry, scope, skia, ui, actions, settings
+from talon import Module, actions, app, registry, scope, settings, skia, ui
 from talon.canvas import Canvas
 from talon.screen import Screen
 from talon.skia.canvas import Canvas as SkiaCanvas
@@ -120,6 +120,7 @@ def on_draw(c: SkiaCanvas):
     #     c.paint.color = "EE0000"
     #     c.draw_circle(redx,redy, red_radius)
 
+
 def on_draw_red(c: SkiaCanvas):
     color_mode, color_gradient = get_colors()
     x, y = c.rect.center.x, c.rect.center.y
@@ -138,7 +139,7 @@ def on_draw_red(c: SkiaCanvas):
 
     active_mic = actions.sound.active_microphone()
     render_red_border = active_mic == "None"
-    actions.user.hud_add_log("warning",f"mic: {active_mic}")
+    actions.user.hud_add_log("warning", f"mic: {active_mic}")
 
     # Create a red border if red_border is True
     if render_red_border:
@@ -146,7 +147,7 @@ def on_draw_red(c: SkiaCanvas):
         red_radius = c.rect.height / 7
         c.paint.style = c.paint.Style.FILL
         c.paint.color = "EE0000"
-        c.draw_circle(redx,redy, red_radius)
+        c.draw_circle(redx, redy, red_radius)
 
 
 def move_indicator():

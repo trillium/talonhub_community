@@ -1,8 +1,8 @@
 import os
 import subprocess
 
-from talon import Context, Module, app
 from security import safe_command
+from talon import Context, Module, app
 
 # path to community/knausj root directory
 REPO_DIR = os.path.dirname(os.path.dirname(__file__))

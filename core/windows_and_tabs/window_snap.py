@@ -237,7 +237,7 @@ _snap_positions = {
     "left large": RelativeScreenPos(0, 0, 2 / 3, 1),
     "right large": RelativeScreenPos(1 / 3, 0, 1, 1),
     # Three quarters side view
-    # .--.--.--.    
+    # .--.--.--.
     # |  |  |  |
     # '--'--'--'
     # "center third": RelativeScreenPos(1 / 3, 0, 2 / 3, 1),
