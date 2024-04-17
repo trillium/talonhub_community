@@ -301,7 +301,6 @@ class UserActions:
             )
             if should_click:
                 ctrl.mouse_click(button=0, hold=16000)
-        
 
     def noise_trigger_hiss(active: bool):
         if settings.get("user.mouse_enable_hiss_scroll"):
