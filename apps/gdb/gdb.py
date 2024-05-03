@@ -15,11 +15,11 @@ ctx_global = Context()
 
 @mod.action_class
 class Actions:
-    def gdb_enable():
+    def gdb_enable(self):
         """Enables the gdb tag"""
         ctx_global.tags = ["user.gdb"]
 
-    def gdb_disable():
+    def gdb_disable(self):
         """Disables the gdb tag"""
         ctx_global.tags = []
 
@@ -31,80 +31,80 @@ class UserActions:
     ##
 
     # Code execution
-    def debugger_step_into():
+    def debugger_step_into(self):
         actions.auto_insert("stepi\n")
 
-    def debugger_step_over():
+    def debugger_step_over(self):
         actions.auto_insert("nexti\n")
 
-    def debugger_step_line():
+    def debugger_step_line(self):
         actions.auto_insert("step\n")
 
-    def debugger_step_over_line():
+    def debugger_step_over_line(self):
         actions.auto_insert("next\n")
 
-    def debugger_step_out():
+    def debugger_step_out(self):
         actions.auto_insert("finish\n")
 
-    def debugger_continue():
+    def debugger_continue(self):
         actions.auto_insert("c\n")
 
-    def debugger_stop():
+    def debugger_stop(self):
         actions.key("ctrl-c")
 
-    def debugger_start():
+    def debugger_start(self):
         actions.auto_insert("run\n")
 
-    def debugger_restart():
+    def debugger_restart(self):
         actions.auto_insert("run\n")
 
     # XXX -
-    def debugger_detach():
+    def debugger_detach(self):
         actions.auto_insert("")
 
     # Registers
-    def debugger_show_registers():
+    def debugger_show_registers(self):
         actions.auto_insert("info registers\n")
 
-    def debugger_get_register():
+    def debugger_get_register(self):
         actions.auto_insert("r ")
 
-    def debugger_set_register():
+    def debugger_set_register(self):
         actions.user.insert_between("set $", "=")
         # Breakpoints
 
-    def debugger_show_breakpoints():
+    def debugger_show_breakpoints(self):
         actions.auto_insert("info breakpoints\n")
 
-    def debugger_add_sw_breakpoint():
+    def debugger_add_sw_breakpoint(self):
         actions.auto_insert("break ")
 
     # XXX -
-    def debugger_add_hw_breakpoint():
+    def debugger_add_hw_breakpoint(self):
         actions.auto_insert("")
 
-    def debugger_break_now():
+    def debugger_break_now(self):
         actions.key("ctrl-c")
 
-    def debugger_break_here():
+    def debugger_break_here(self):
         actions.auto_insert("break\n")
 
-    def debugger_clear_all_breakpoints():
+    def debugger_clear_all_breakpoints(self):
         actions.auto_insert("d br\n")
 
-    def debugger_clear_breakpoint():
+    def debugger_clear_breakpoint(self):
         actions.insert("d br ")
 
-    def debugger_enable_all_breakpoints():
+    def debugger_enable_all_breakpoints(self):
         actions.insert("enable br\n")
 
-    def debugger_enable_breakpoint():
+    def debugger_enable_breakpoint(self):
         actions.insert("enable br ")
 
-    def debugger_disable_all_breakpoints():
+    def debugger_disable_all_breakpoints(self):
         actions.insert("disable br\n")
 
-    def debugger_disable_breakpoint():
+    def debugger_disable_breakpoint(self):
         actions.insert("disable br  ")
 
     def debugger_clear_breakpoint_id(number_small: int):

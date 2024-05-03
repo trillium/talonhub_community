@@ -8,7 +8,7 @@ END_OF_WORD_SYMBOLS = ".!?;:—_/\\|@#$%^&*()[]{}<>=+-~`"
 
 @ctx.action_class("edit")
 class EditActions:
-    def selected_text() -> str:
+    def selected_text(self) -> str:
         with clip.capture() as s:
             actions.edit.copy()
         try:
@@ -16,16 +16,16 @@ class EditActions:
         except clip.NoChange:
             return ""
 
-    def line_insert_down():
+    def line_insert_down(self):
         actions.edit.line_end()
         actions.key("enter")
 
-    def selection_clone():
+    def selection_clone(self):
         actions.edit.copy()
         actions.edit.select_none()
         actions.edit.paste()
 
-    def line_clone():
+    def line_clone(self):
         # This may not work if editor auto-indents. Is there a better way?
         actions.edit.line_start()
         actions.edit.extend_line_end()
@@ -41,7 +41,7 @@ class EditActions:
     #     actions.edit.word_left()
     #     actions.edit.extend_word_right()
 
-    def select_word():
+    def select_word(self):
         actions.edit.extend_right()
         character_to_right_of_initial_caret_position = actions.edit.selected_text()
 
@@ -79,7 +79,7 @@ class Actions:
             # sleep here so that clip.revert doesn't revert the clipboard too soon
             actions.sleep("150ms")
 
-    def delete_right():
+    def delete_right(self):
         """Delete character to the right"""
         actions.key("delete")
 
@@ -93,125 +93,125 @@ class Actions:
         for _ in range(n):
             actions.edit.word_right()
 
-    def cut_word():
+    def cut_word(self):
         """Cut word under cursor"""
         actions.edit.select_word()
         actions.edit.cut()
 
-    def cut_word_left():
+    def cut_word_left(self):
         """Cuts the word to the left."""
         actions.edit.extend_word_left()
         actions.edit.cut()
 
-    def cut_word_right():
+    def cut_word_right(self):
         """Cuts the word to the right."""
         actions.edit.extend_word_right()
         actions.edit.cut()
 
-    def copy_word():
+    def copy_word(self):
         """Copy word under cursor"""
         actions.edit.select_word()
         actions.edit.copy()
 
-    def copy_word_left():
+    def copy_word_left(self):
         """Copies the word to the left."""
         actions.edit.extend_word_left()
         actions.edit.copy()
 
-    def copy_word_right():
+    def copy_word_right(self):
         """Copies the word to the right."""
         actions.edit.extend_word_right()
         actions.edit.copy()
 
-    def paste_word():
+    def paste_word(self):
         """Paste to word under cursor"""
         actions.edit.select_word()
         actions.edit.paste()
 
-    def cut_all():
+    def cut_all(self):
         """Cut all text in the current document"""
         actions.edit.select_all()
         actions.edit.cut()
 
-    def copy_all():
+    def copy_all(self):
         """Copy all text in the current document"""
         actions.edit.select_all()
         actions.edit.copy()
 
-    def paste_all():
+    def paste_all(self):
         """Paste to the current document"""
         actions.edit.select_all()
         actions.edit.paste()
 
-    def delete_all():
+    def delete_all(self):
         """Delete all text in the current document"""
         actions.edit.select_all()
         actions.edit.delete()
 
-    def cut_line():
+    def cut_line(self):
         """Cut current line"""
         actions.edit.select_line()
         actions.edit.cut()
 
-    def copy_line():
+    def copy_line(self):
         """Copy current line"""
         actions.edit.select_line()
         actions.edit.copy()
 
-    def paste_line():
+    def paste_line(self):
         """Paste to current line"""
         actions.edit.select_line()
         actions.edit.paste()
 
     # ----- Start / End of line -----
-    def select_line_start():
+    def select_line_start(self):
         """Select to start of current line"""
         if actions.edit.selected_text():
             actions.edit.left()
         actions.edit.extend_line_start()
 
-    def select_line_end():
+    def select_line_end(self):
         """Select to end of current line"""
         if actions.edit.selected_text():
             actions.edit.right()
         actions.edit.extend_line_end()
 
-    def cut_line_start():
+    def cut_line_start(self):
         """Cut to start of current line"""
         actions.user.select_line_start()
         actions.edit.cut()
 
-    def cut_line_end():
+    def cut_line_end(self):
         """Cut to end of current line"""
         actions.user.select_line_end()
         actions.edit.cut()
 
-    def copy_line_start():
+    def copy_line_start(self):
         """Copy to start of current line"""
         actions.user.select_line_start()
         actions.edit.copy()
 
-    def copy_line_end():
+    def copy_line_end(self):
         """Copy to end of current line"""
         actions.user.select_line_end()
         actions.edit.copy()
 
-    def paste_line_start():
+    def paste_line_start(self):
         """Paste to start of current line"""
         actions.user.select_line_start()
         actions.edit.paste()
 
-    def paste_line_end():
+    def paste_line_end(self):
         """Paste to end of current line"""
         actions.user.select_line_end()
         actions.edit.paste()
 
-    def delete_line_start():
+    def delete_line_start(self):
         """Delete to start of current line"""
         actions.user.select_line_start()
         actions.edit.delete()
 
-    def delete_line_end():
+    def delete_line_end(self):
         """Delete to end of current line"""
         actions.user.select_line_end()
         actions.edit.delete()

@@ -11,11 +11,11 @@ mod.tag(
 
 @mod.action_class
 class Actions:
-    def code_operator_object_accessor():
+    def code_operator_object_accessor(self):
         """Inserts the object accessor operator (e.g., Java's "." or PHP's "->)"""
 
-    def code_self():
+    def code_self(self):
         """Inserts a reference to the current object (e.g., C++ "this" or Python's "self")"""
 
-    def code_define_class():
+    def code_define_class(self):
         """Starts a class definition (e.g., Java's "class" keyword)"""

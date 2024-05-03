@@ -8,11 +8,11 @@ mod.tag("code_operators_pointer", desc="Tag for enabling pointer operator comman
 
 @mod.action_class
 class Actions:
-    def code_operator_indirection():
+    def code_operator_indirection(self):
         """code_operator_indirection"""
 
-    def code_operator_address_of():
+    def code_operator_address_of(self):
         """code_operator_address_of (e.g., C++ & op)"""
 
-    def code_operator_structure_dereference():
+    def code_operator_structure_dereference(self):
         """code_operator_structure_dereference (e.g., C++ -> op)"""

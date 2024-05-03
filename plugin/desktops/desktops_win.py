@@ -10,13 +10,13 @@ os: windows
 class Actions:
     # def desktop(number: int):
 
-    def desktop_next():
+    def desktop_next(self):
         actions.key("super-ctrl-right")
 
-    def desktop_last():
+    def desktop_last(self):
         actions.key("super-ctrl-left")
 
-    def desktop_show():
+    def desktop_show(self):
         actions.key("super-tab")
 
     # def window_move_desktop_left():

@@ -14,13 +14,13 @@ class UserActions:
         if number < 9:
             actions.key(f"cmd-{number}")
 
-    def tab_final():
+    def tab_final(self):
         actions.key("cmd-9")
 
 
 @ctx.action_class("browser")
 class BrowserActions:
-    def address():
+    def address(self):
         try:
             mac_app = ui.apps(bundle=actions.app.bundle())[0]
             window = mac_app.windows()[0]
@@ -44,50 +44,50 @@ class BrowserActions:
                 return actions.next()
         return address
 
-    def bookmark():
+    def bookmark(self):
         actions.key("cmd-d")
 
-    def bookmark_tabs():
+    def bookmark_tabs(self):
         actions.key("cmd-shift-d")
 
-    def bookmarks():
+    def bookmarks(self):
         actions.key("cmd-alt-b")
 
-    def bookmarks_bar():
+    def bookmarks_bar(self):
         actions.key("cmd-shift-b")
 
-    def focus_address():
+    def focus_address(self):
         actions.key("cmd-l")
 
-    def go_blank():
+    def go_blank(self):
         actions.key("cmd-n")
 
-    def go_home():
+    def go_home(self):
         actions.key("cmd-shift-h")
 
-    def go_back():
+    def go_back(self):
         actions.key("cmd-[")
 
-    def go_forward():
+    def go_forward(self):
         actions.key("cmd-]")
 
-    def open_private_window():
+    def open_private_window(self):
         actions.key("cmd-shift-n")
 
-    def reload():
+    def reload(self):
         actions.key("cmd-r")
 
-    def reload_hard():
+    def reload_hard(self):
         actions.key("cmd-shift-r")
 
-    def show_downloads():
+    def show_downloads(self):
         actions.key("cmd-shift-j")
 
-    def show_clear_cache():
+    def show_clear_cache(self):
         actions.key("cmd-shift-backspace")
 
-    def show_history():
+    def show_history(self):
         actions.key("cmd-y")
 
-    def toggle_dev_tools():
+    def toggle_dev_tools(self):
         actions.key("cmd-alt-i")

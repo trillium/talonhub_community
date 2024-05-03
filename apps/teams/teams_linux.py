@@ -12,11 +12,11 @@ class EditActions:
     # zoom in: key(ctrl-=)
     # zoom out: key(ctrl--)
     # reset zoom: key(ctrl-0)
-    def zoom_in():
+    def zoom_in(self):
         actions.key("ctrl-=")
 
-    def zoom_out():
+    def zoom_out(self):
         actions.key("ctrl--")
 
-    def zoom_reset():
+    def zoom_reset(self):
         actions.key("ctrl-0")

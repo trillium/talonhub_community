@@ -86,16 +86,16 @@ if app.platform == "windows":
 
 @ctx.action_class("user")
 class UserActions:
-    def file_manager_go_back():
+    def file_manager_go_back(self):
         actions.key("alt-left")
 
-    def file_manager_go_forward():
+    def file_manager_go_forward(self):
         actions.key("alt-right")
 
-    def file_manager_open_parent():
+    def file_manager_open_parent(self):
         actions.key("alt-up")
 
-    def file_manager_current_path():
+    def file_manager_current_path(self):
         path = ui.active_window().title
 
         if path in directories_to_remap:
@@ -107,12 +107,12 @@ class UserActions:
 
         return path
 
-    def file_manager_terminal_here():
+    def file_manager_terminal_here(self):
         actions.key("ctrl-l")
         actions.insert("cmd.exe")
         actions.key("enter")
 
-    def file_manager_show_properties():
+    def file_manager_show_properties(self):
         """Shows the properties for the file"""
         actions.key("alt-enter")
 

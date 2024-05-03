@@ -53,23 +53,23 @@ def get_win_path(cyg_path):
 
 @ctx.action_class("edit")
 class EditActions:
-    def paste():
+    def paste(self):
         actions.key("shift-insert")
 
-    def copy():
+    def copy(self):
         actions.key("ctrl-insert")
 
-    def delete_line():
+    def delete_line(self):
         actions.key("ctrl-u")
 
 
 @ctx.action_class("user")
 class UserActions:
-    def file_manager_open_parent():
+    def file_manager_open_parent(self):
         actions.insert("cd ..")
         actions.key("enter")
 
-    def file_manager_current_path():
+    def file_manager_current_path(self):
         path = ui.active_window().title
         path = get_win_path(path)
 
@@ -80,7 +80,7 @@ class UserActions:
             path = ""
         return path
 
-    def file_manager_show_properties():
+    def file_manager_show_properties(self):
         """Shows the properties for the file"""
 
     def file_manager_open_directory(path: str):
@@ -113,11 +113,11 @@ class UserActions:
         """file_manager_open_volume"""
         actions.user.file_manager_open_directory(volume)
 
-    def terminal_list_directories():
+    def terminal_list_directories(self):
         actions.insert("ls")
         actions.key("enter")
 
-    def terminal_list_all_directories():
+    def terminal_list_all_directories(self):
         actions.insert("ls -a")
         actions.key("enter")
 
@@ -126,19 +126,19 @@ class UserActions:
         if path:
             actions.key("enter")
 
-    def terminal_change_directory_root():
+    def terminal_change_directory_root(self):
         """Root of current drive"""
         actions.insert("cd /")
         actions.key("enter")
 
-    def terminal_clear_screen():
+    def terminal_clear_screen(self):
         """Clear screen"""
         actions.key("ctrl-l")
 
-    def terminal_run_last():
+    def terminal_run_last(self):
         actions.key("up enter")
 
-    def terminal_kill_all():
+    def terminal_kill_all(self):
         actions.key("ctrl-c")
         actions.insert("y")
         actions.key("enter")

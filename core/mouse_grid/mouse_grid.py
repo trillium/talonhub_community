@@ -279,18 +279,18 @@ mg = MouseSnapNine()
 
 @mod.action_class
 class GridActions:
-    def grid_activate():
+    def grid_activate(self):
         """Show mouse grid"""
         if not mg.mcanvas:
             mg.setup()
         mg.show()
         ctx.tags = ["user.mouse_grid_showing"]
 
-    def grid_place_window():
+    def grid_place_window(self):
         """Places the grid on the currently active window"""
         mg.setup(rect=ui.active_window().rect)
 
-    def grid_reset():
+    def grid_reset(self):
         """Resets the grid to fill the whole screen again"""
         if mg.active:
             mg.setup()
@@ -316,15 +316,15 @@ class GridActions:
         """Choose a field of the grid and narrow the selection down"""
         mg.narrow([mg.chars_map[letter]])
 
-    def grid_go_back():
+    def grid_go_back(self):
         """Sets the grid state back to what it was before the last command"""
         mg.go_back()
 
-    def grid_close():
+    def grid_close(self):
         """Close the active grid"""
         ctx.tags = []
         mg.close()
 
-    def grid_is_active():
+    def grid_is_active(self):
         """check if grid is already active"""
         return mg.active

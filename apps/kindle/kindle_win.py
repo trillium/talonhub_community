@@ -12,10 +12,10 @@ app: kindle
 @ctx.action_class("user")
 class UserActions:
     # user.pages
-    def page_next():
+    def page_next(self):
         actions.key("down")
 
-    def page_previous():
+    def page_previous(self):
         actions.key("up")
 
     def page_jump(number: int):

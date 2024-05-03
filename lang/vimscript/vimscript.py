@@ -45,43 +45,43 @@ def vimscript_scope(m) -> str:
 
 @ctx.action_class("user")
 class UserActions:
-    def code_operator_assignment():
+    def code_operator_assignment(self):
         actions.auto_insert(" = ")
 
-    def code_operator_subtraction():
+    def code_operator_subtraction(self):
         actions.auto_insert(" - ")
 
-    def code_operator_subtraction_assignment():
+    def code_operator_subtraction_assignment(self):
         actions.auto_insert(" -= ")
 
-    def code_operator_addition():
+    def code_operator_addition(self):
         actions.auto_insert(" + ")
 
-    def code_operator_addition_assignment():
+    def code_operator_addition_assignment(self):
         actions.auto_insert(" += ")
 
-    def code_operator_multiplication():
+    def code_operator_multiplication(self):
         actions.auto_insert(" * ")
 
-    def code_operator_multiplication_assignment():
+    def code_operator_multiplication_assignment(self):
         actions.auto_insert(" *= ")
 
-    def code_operator_division():
+    def code_operator_division(self):
         actions.auto_insert(" / ")
 
-    def code_operator_division_assignment():
+    def code_operator_division_assignment(self):
         actions.auto_insert(" /= ")
 
-    def code_comment_line_prefix():
+    def code_comment_line_prefix(self):
         actions.auto_insert('"')
 
-    def code_state_if():
+    def code_state_if(self):
         actions.insert("if ")
 
-    def code_state_else_if():
+    def code_state_else_if(self):
         actions.insert("elseif ")
 
-    def code_state_else():
+    def code_state_else(self):
         actions.insert("else")
 
     def code_private_function(text: str):

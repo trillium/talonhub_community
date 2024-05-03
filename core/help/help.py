@@ -556,7 +556,7 @@ class Actions:
         register_events(False)
         ctx.tags = ["user.help_open"]
 
-    def help_context_enabled():
+    def help_context_enabled(self):
         """Display contextual command info"""
         reset()
         refresh_context_command_map(enabled_only=True)
@@ -565,7 +565,7 @@ class Actions:
         register_events(True)
         ctx.tags = ["user.help_open"]
 
-    def help_context():
+    def help_context(self):
         """Display contextual command info"""
         reset()
         refresh_context_command_map()
@@ -604,7 +604,7 @@ class Actions:
         register_events(True)
         ctx.tags = ["user.help_open"]
 
-    def help_next():
+    def help_next(self):
         """Navigates to next page"""
         global current_context_page
         global selected_context
@@ -650,7 +650,7 @@ class Actions:
                         ]
                     ]
 
-    def help_previous():
+    def help_previous(self):
         """Navigates to previous page"""
         global current_context_page
         global selected_context
@@ -678,7 +678,7 @@ class Actions:
             else:
                 current_list_page = 1
 
-    def help_return():
+    def help_return(self):
         """Returns to the main help window"""
         global selected_context
         global selected_context_page
@@ -689,7 +689,7 @@ class Actions:
             selected_context_page = 1
             selected_context = None
 
-    def help_refresh():
+    def help_refresh(self):
         """Refreshes the help"""
         global show_enabled_contexts_only
         global selected_context
@@ -700,7 +700,7 @@ class Actions:
             else:
                 update_active_contexts_cache(registry.active_contexts())
 
-    def help_hide():
+    def help_hide(self):
         """Hides the help"""
         reset()
 

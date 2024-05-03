@@ -6,7 +6,7 @@ mod = Module()
 
 @mod.action_class
 class Actions:
-    def screens_show_numbering():
+    def screens_show_numbering(self):
         """Show screen number on each screen"""
         screens = get_sorted_screens()
         number = 1

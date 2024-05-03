@@ -19,7 +19,7 @@ time_last_pop = 0
 
 @ctx.action_class("user")
 class UserActions:
-    def noise_trigger_pop():
+    def noise_trigger_pop(self):
         print("Pop to repeat!")
         global time_last_pop
         # if settings.get("user.mouse_enable_pop_wake") == 1:

@@ -93,7 +93,7 @@ class EditActions:
     Make default edit actions more efficient.
     """
 
-    def selected_text() -> str:
+    def selected_text(self) -> str:
         area = draft_manager.area
         if area.sel:
             result = area[area.sel.left : area.sel.right]
@@ -230,7 +230,7 @@ class Actions:
         UndoWorkaround.start_logger(text is not None)
         ctx.tags = ["user.draft_window_showing"]
 
-    def draft_hide():
+    def draft_hide(self):
         """
         Hides draft window
         """
@@ -259,7 +259,7 @@ class Actions:
 
         draft_manager.position_caret(anchor, after=after == 1)
 
-    def draft_get_text() -> str:
+    def draft_get_text(self) -> str:
         """
         Returns the text in the draft window
         """

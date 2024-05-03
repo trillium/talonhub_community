@@ -17,7 +17,7 @@ mod.setting(
 
 @mod.action_class
 class TmuxActions:
-    def tmux_prefix():
+    def tmux_prefix(self):
         """press control and the configured tmux prefix key"""
         actions.key(settings.get("user.tmux_prefix_key"))
 
@@ -51,13 +51,13 @@ ctx.matches = "app: tmux"
 
 @ctx.action_class("app")
 class AppActions:
-    def tab_open():
+    def tab_open(self):
         actions.user.tmux_execute_command("new-window")
 
-    def tab_next():
+    def tab_next(self):
         actions.user.tmux_execute_command("select-window -n")
 
-    def tab_previous():
+    def tab_previous(self):
         actions.user.tmux_execute_command("select-window -p")
 
 
@@ -69,54 +69,54 @@ class UserActions:
         else:
             actions.user.tmux_execute_command(f"select-window -t {number}")
 
-    def tab_close_wrapper():
+    def tab_close_wrapper(self):
         actions.user.tmux_execute_command_with_confirmation(
             "kill-window", "kill-window #W?"
         )
 
-    def split_window_right():
+    def split_window_right(self):
         actions.user.split_window_horizontally()
         actions.user.tmux_execute_command("swap-pane -U -s #P")
 
-    def split_window_left():
+    def split_window_left(self):
         actions.user.split_window_horizontally()
 
-    def split_window_down():
+    def split_window_down(self):
         actions.user.split_window_vertically()
         actions.user.tmux_execute_command("swap-pane -U -s #P")
 
-    def split_window_up():
+    def split_window_up(self):
         actions.user.split_window_vertically()
 
-    def split_flip():
+    def split_flip(self):
         actions.user.tmux_execute_command("next-layout")
 
-    def split_window_vertically():
+    def split_window_vertically(self):
         actions.user.tmux_execute_command("split-pane")
 
-    def split_window_horizontally():
+    def split_window_horizontally(self):
         actions.user.tmux_execute_command("split-pane -h")
 
-    def split_maximize():
+    def split_maximize(self):
         # toggle the maximization because zooming when already zoomed is pointless
         actions.user.tmux_execute_command("resize-pane -Z")
 
-    def split_reset():
+    def split_reset(self):
         actions.user.tmux_execute_command("resize-pane -Z")
 
-    def split_window():
+    def split_window(self):
         actions.user.split_window_horizontally()
 
-    def split_clear():
+    def split_clear(self):
         actions.user.tmux_execute_command_with_confirmation(
             "kill-pane", "kill-pane #P?"
         )
 
-    def split_next():
+    def split_next(self):
         # select-pane doesn't seem to support the prefix-o behavior
         actions.user.tmux_keybind("o")
 
-    def split_last():
+    def split_last(self):
         actions.user.tmux_execute_command("select-pane -l")
 
     def split_number(index: int):

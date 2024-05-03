@@ -319,11 +319,11 @@ class Actions:
         """Move the active window to a specifically named position on its current screen, using a key from `_snap_positions`."""
         actions.user.snap_window(_snap_positions[position_name])
 
-    def move_window_next_screen() -> None:
+    def move_window_next_screen(self) -> None:
         """Move the active window to a specific screen."""
         _move_to_screen(ui.active_window(), offset=1)
 
-    def move_window_previous_screen() -> None:
+    def move_window_previous_screen(self) -> None:
         """Move the active window to the previous screen."""
         _move_to_screen(ui.active_window(), offset=-1)
 

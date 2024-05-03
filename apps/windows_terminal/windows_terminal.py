@@ -15,19 +15,19 @@ directories_to_exclude = {}
 
 @ctx.action_class("app")
 class AppActions:
-    def tab_close():
+    def tab_close(self):
         actions.key("ctrl-shift-w")
 
-    def tab_open():
+    def tab_open(self):
         actions.key("ctrl-shift-t")
 
 
 @ctx.action_class("edit")
 class EditActions:
-    def paste():
+    def paste(self):
         actions.key("ctrl-shift-v")
 
-    def copy():
+    def copy(self):
         actions.key("ctrl-shift-c")
 
     def find(text: str = None):
@@ -38,7 +38,7 @@ class EditActions:
 
 @ctx.action_class("user")
 class UserActions:
-    def file_manager_current_path():
+    def file_manager_current_path(self):
         path = ui.active_window().title
         path = (
             path.replace("Administrator:  ", "")
@@ -95,72 +95,72 @@ class UserActions:
 
     # user.splits implementation:
 
-    def split_window_right():
+    def split_window_right(self):
         """Move active tab to right split"""
         # TODO: decide whether this notification is good style
         actions.app.notify(
             '"Split right" is not possible in windows terminal without special configuration. Use "split vertically" instead.'
         )
 
-    def split_window_left():
+    def split_window_left(self):
         """Move active tab to left split"""
         # TODO: decide whether this notification is good style
         actions.app.notify(
             '"Split left" is not possible in windows terminal without special configuration. Use "split vertically" instead.'
         )
 
-    def split_window_down():
+    def split_window_down(self):
         """Move active tab to lower split"""
         # TODO: decide whether this notification is good style
         actions.app.notify(
             '"Split down" is not possible in windows terminal without special configuration. Use "split horizontally" instead.'
         )
 
-    def split_window_up():
+    def split_window_up(self):
         """Move active tab to upper split"""
         # TODO: decide whether this notification is good style
         actions.app.notify(
             '"Split up" is not possible in windows terminal without special configuration. Use "split horizontally" instead.'
         )
 
-    def split_window_vertically():
+    def split_window_vertically(self):
         """Splits window vertically"""
         actions.key("shift-alt-plus")
 
-    def split_window_horizontally():
+    def split_window_horizontally(self):
         """Splits window horizontally"""
         actions.key("shift-alt-minus")
 
-    def split_flip():
+    def split_flip(self):
         """Flips the orietation of the active split"""
         # TODO: decide whether this notification is good style
         actions.app.notify(
             '"Split flip" is not possible in windows terminal in default configuration.'
         )
 
-    def split_window():
+    def split_window(self):
         """Splits the window"""
         # in this implementation an alias for split vertically
         actions.key("shift-alt-plus")
 
-    def split_clear():
+    def split_clear(self):
         """Clears the current split"""
         # also closes tab, because shortcut is the same
         # and closing a split does mean something differnent that in a code editor like vs code
         actions.key("ctrl-shift-w")
 
-    def split_clear_all():
+    def split_clear_all(self):
         """Clears all splits"""
         # TODO: decide whether to implement it at all since it either doesn't makes sense or closes the window/whole tab
 
-    def split_next():
+    def split_next(self):
         """Goes to next split"""
         # TODO: decide whether this notification is good style
         actions.app.notify(
             '"Split next" is not possible in windows terminal without special configuration. Use "focus left/right/up/down" instead.'
         )
 
-    def split_last():
+    def split_last(self):
         """Goes to last split"""
         # TODO: decide whether this notification is good style
         actions.app.notify(
@@ -173,5 +173,5 @@ class UserActions:
             '"Split_number" is not possible in windows terminal in default configuration.'
         )
 
-    def tab_final():
+    def tab_final(self):
         actions.key("ctrl-alt-9")

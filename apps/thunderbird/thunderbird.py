@@ -93,5 +93,5 @@ class UserActions:
 class AppActions:
     # app.tabs
     # not possible in thunderbird
-    def tab_open():
+    def tab_open(self):
         pass

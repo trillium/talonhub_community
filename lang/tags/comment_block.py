@@ -14,24 +14,24 @@ c_like_ctx.tags = ["user.code_comment_block"]
 
 @mod.action_class
 class Actions:
-    def code_comment_block():
+    def code_comment_block(self):
         """Block comment"""
 
-    def code_comment_block_prefix():
+    def code_comment_block_prefix(self):
         """Block comment start syntax"""
 
-    def code_comment_block_suffix():
+    def code_comment_block_suffix(self):
         """Block comment end syntax"""
 
 
 @c_like_ctx.action_class("user")
 class CActions:
-    def code_comment_block():
+    def code_comment_block(self):
         actions.insert("/*\n\n*/")
         actions.edit.up()
 
-    def code_comment_block_prefix():
+    def code_comment_block_prefix(self):
         actions.auto_insert("/*")
 
-    def code_comment_block_suffix():
+    def code_comment_block_suffix(self):
         actions.auto_insert("*/")

@@ -9,22 +9,22 @@ class Actions:
     def find(text: str):
         """Finds text in current editor"""
 
-    def find_next():
+    def find_next(self):
         """Navigates to the next occurrence"""
 
-    def find_previous():
+    def find_previous(self):
         """Navigates to the previous occurrence"""
 
     def find_everywhere(text: str):
         """Finds text across project"""
 
-    def find_toggle_match_by_case():
+    def find_toggle_match_by_case(self):
         """Toggles find match by case sensitivity"""
 
-    def find_toggle_match_by_word():
+    def find_toggle_match_by_word(self):
         """Toggles find match by whole words"""
 
-    def find_toggle_match_by_regex():
+    def find_toggle_match_by_regex(self):
         """Toggles find match by regex"""
 
     def replace(text: str):
@@ -33,10 +33,10 @@ class Actions:
     def replace_everywhere(text: str):
         """Search and replaces for text in the entire project"""
 
-    def replace_confirm():
+    def replace_confirm(self):
         """Confirm replace at current position"""
 
-    def replace_confirm_all():
+    def replace_confirm_all(self):
         """Confirm replace all"""
 
     def select_previous_occurrence(text: str):

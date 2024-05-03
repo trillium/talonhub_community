@@ -412,14 +412,14 @@ def get_distro():
 
 @ctx.action_class("user")
 class UserActions:
-    def file_manager_refresh_title():
+    def file_manager_refresh_title(self):
         actions.skip()
 
-    def file_manager_open_parent():
+    def file_manager_open_parent(self):
         actions.insert("cd ..")
         actions.key("enter")
 
-    def file_manager_current_path():
+    def file_manager_current_path(self):
         global path_detection_disabled
         if path_detection_disabled:
             logging.warning(
@@ -482,11 +482,11 @@ class UserActions:
     def file_manager_open_volume(volume: str):
         actions.user.file_manager_open_directory(volume)
 
-    def terminal_list_directories():
+    def terminal_list_directories(self):
         actions.insert("ls")
         actions.key("enter")
 
-    def terminal_list_all_directories():
+    def terminal_list_all_directories(self):
         actions.insert("ls -a")
         actions.key("enter")
 
@@ -495,19 +495,19 @@ class UserActions:
         if path:
             actions.key("enter")
 
-    def terminal_change_directory_root():
+    def terminal_change_directory_root(self):
         """Root of current drive"""
         actions.insert("cd /")
         actions.key("enter")
 
-    def terminal_clear_screen():
+    def terminal_clear_screen(self):
         """Clear screen"""
         actions.key("ctrl-l")
 
-    def terminal_run_last():
+    def terminal_run_last(self):
         actions.key("up enter")
 
-    def terminal_kill_all():
+    def terminal_kill_all(self):
         actions.key("ctrl-c")
         actions.insert("y")
         actions.key("enter")
@@ -515,12 +515,12 @@ class UserActions:
 
 @mod.action_class
 class Actions:
-    def wsl_reset_path_detection():
+    def wsl_reset_path_detection(self):
         """reset wsl path detection"""
         global path_detection_disabled
         path_detection_disabled = False
 
-    def wsl_speak():
+    def wsl_speak(self):
         """ask each distro to say hello (in the log)"""
         results = []
         _update_wsl_distros()

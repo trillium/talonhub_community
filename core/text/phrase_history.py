@@ -12,7 +12,7 @@ phrase_history_display_length = 40
 
 @mod.action_class
 class Actions:
-    def get_last_phrase() -> str:
+    def get_last_phrase(self) -> str:
         """Gets the last phrase"""
         return phrase_history[0] if phrase_history else ""
 
@@ -23,7 +23,7 @@ class Actions:
         except IndexError:
             return ""
 
-    def clear_last_phrase():
+    def clear_last_phrase(self):
         """Clears the last phrase"""
         # Currently, this removes the cleared phrase from the phrase history, so
         # that repeated calls clear successively earlier phrases, which is often
@@ -36,7 +36,7 @@ class Actions:
         for _ in phrase_history.pop(0):
             actions.key("backspace")
 
-    def select_last_phrase():
+    def select_last_phrase(self):
         """Selects the last phrase"""
         if not phrase_history:
             logging.warning("select_last_phrase(): No last phrase to select!")
@@ -44,7 +44,7 @@ class Actions:
         for _ in phrase_history[0]:
             actions.edit.extend_left()
 
-    def before_last_phrase():
+    def before_last_phrase(self):
         """Moves left before the last phrase"""
         try:
             for _ in phrase_history.pop(0):
@@ -58,14 +58,14 @@ class Actions:
         phrase_history.insert(0, text)
         phrase_history = phrase_history[:phrase_history_length]
 
-    def toggle_phrase_history():
+    def toggle_phrase_history(self):
         """Toggles list of recent phrases"""
         if gui.showing:
             gui.hide()
         else:
             gui.show()
 
-    def phrase_history_hide():
+    def phrase_history_hide(self):
         """Hides the recent phrases window"""
 
         gui.hide()

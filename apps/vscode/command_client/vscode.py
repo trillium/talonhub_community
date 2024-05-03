@@ -35,7 +35,7 @@ def command_server_or_client_fallback(command_id: str, wait: bool):
 
 @ctx.action_class("user")
 class VsCodeAction:
-    def command_server_directory() -> str:
+    def command_server_directory(self) -> str:
         return "vscode-command-server"
 
 
@@ -100,7 +100,7 @@ class Actions:
 
 @linux_ctx.action_class("user")
 class LinuxUserActions:
-    def trigger_command_server_command_execution():
+    def trigger_command_server_command_execution(self):
         # Work around bug with upper f-keys in VSCode on Linux. See
         # https://github.com/pokey/command-server/issues/9#issuecomment-963733930
         actions.key("ctrl-shift-alt-p")

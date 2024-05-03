@@ -18,13 +18,13 @@ ctx.tags = ["user.file_manager", "user.git", "user.kubectl", "terminal"]
 
 @ctx.action_class("edit")
 class EditActions:
-    def delete_line():
+    def delete_line(self):
         actions.key("esc")
 
 
 @ctx.action_class("user")
 class UserActions:
-    def file_manager_refresh_title():
+    def file_manager_refresh_title(self):
         actions.insert("title Command Prompt: %CD%")
         actions.key("enter")
         # action(user.file_manager_go_back):
@@ -32,12 +32,12 @@ class UserActions:
         # action(user.file_manager_go_forward):
         #    key("alt-right")
 
-    def file_manager_open_parent():
+    def file_manager_open_parent(self):
         actions.insert("cd ..")
         actions.key("enter")
         actions.user.file_manager_refresh_title()
 
-    def file_manager_current_path():
+    def file_manager_current_path(self):
         path = ui.active_window().title
         path = path.replace("Administrator:  ", "").replace("Command Prompt: ", "")
         if path in directories_to_remap:
@@ -83,12 +83,12 @@ class UserActions:
         """file_manager_open_volume"""
         actions.user.file_manager_open_directory(volume)
 
-    def terminal_list_directories():
+    def terminal_list_directories(self):
         """Lists directories"""
         actions.insert("dir")
         actions.key("enter")
 
-    def terminal_list_all_directories():
+    def terminal_list_all_directories(self):
         actions.insert("dir /a")
         actions.key("enter")
 
@@ -97,20 +97,20 @@ class UserActions:
         # if path:
         # actions.key("enter")
 
-    def terminal_change_directory_root():
+    def terminal_change_directory_root(self):
         """Root of current drive"""
         actions.insert("cd /")
         actions.key("enter")
 
-    def terminal_clear_screen():
+    def terminal_clear_screen(self):
         """Clear screen"""
         actions.insert("cls")
         actions.key("enter")
 
-    def terminal_run_last():
+    def terminal_run_last(self):
         actions.key("up enter")
 
-    def terminal_kill_all():
+    def terminal_kill_all(self):
         actions.key("ctrl-c")
         actions.insert("y")
         actions.key("enter")

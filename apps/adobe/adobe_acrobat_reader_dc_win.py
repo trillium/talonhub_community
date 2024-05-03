@@ -12,38 +12,38 @@ app: adobe_acrobat_reader_dc
 @ctx.action_class("app")
 class AppActions:
     # app.tabs
-    def tab_next():
+    def tab_next(self):
         actions.key("ctrl-tab")
 
-    def tab_previous():
+    def tab_previous(self):
         actions.key("ctrl-shift-tab")
 
 
 @ctx.action_class("edit")
 class EditActions:
-    def zoom_in():
+    def zoom_in(self):
         actions.key("ctrl-0")  # in german version
 
-    def zoom_out():
+    def zoom_out(self):
         actions.key("ctrl-1")  # in german version TODO: differentiate languages
 
-    def zoom_reset():
+    def zoom_reset(self):
         actions.key("ctrl-2")
 
 
 @ctx.action_class("user")
 class UserActions:
     # user.pages
-    def page_current():
+    def page_current(self):
         actions.key("ctrl-shift-n")
         page = actions.edit.selected_text()
         actions.key("tab:2 enter")
         return int(page)
 
-    def page_next():
+    def page_next(self):
         actions.key("ctrl-pagedown")
 
-    def page_previous():
+    def page_previous(self):
         actions.key("ctrl-pageup")
 
     def page_jump(number: int):
@@ -51,5 +51,5 @@ class UserActions:
         actions.insert(str(number))
         actions.key("enter")
 
-    def page_final():
+    def page_final(self):
         actions.key("end")

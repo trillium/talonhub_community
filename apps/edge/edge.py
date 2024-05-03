@@ -23,6 +23,6 @@ app: microsoft_edge
 
 @ctx.action_class("browser")
 class BrowserActions:
-    def show_extensions():
+    def show_extensions(self):
         actions.app.tab_open()
         actions.browser.go("edge://extensions")

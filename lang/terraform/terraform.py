@@ -75,68 +75,68 @@ class UserActions:
         actions.insert(result)
         actions.key("left")
 
-    def code_operator_assignment():
+    def code_operator_assignment(self):
         actions.insert(" = ")
 
-    def code_operator_subtraction():
+    def code_operator_subtraction(self):
         actions.insert(" - ")
 
-    def code_operator_addition():
+    def code_operator_addition(self):
         actions.insert(" + ")
 
-    def code_operator_multiplication():
+    def code_operator_multiplication(self):
         actions.insert(" * ")
 
-    def code_operator_division():
+    def code_operator_division(self):
         actions.insert(" / ")
 
-    def code_operator_modulo():
+    def code_operator_modulo(self):
         actions.insert(" % ")
 
-    def code_operator_equal():
+    def code_operator_equal(self):
         actions.insert(" == ")
 
-    def code_operator_not_equal():
+    def code_operator_not_equal(self):
         actions.insert(" != ")
 
-    def code_operator_greater_than():
+    def code_operator_greater_than(self):
         actions.insert(" > ")
 
-    def code_operator_greater_than_or_equal_to():
+    def code_operator_greater_than_or_equal_to(self):
         actions.insert(" >= ")
 
-    def code_operator_less_than():
+    def code_operator_less_than(self):
         actions.insert(" < ")
 
-    def code_operator_less_than_or_equal_to():
+    def code_operator_less_than_or_equal_to(self):
         actions.insert(" <= ")
 
-    def code_operator_and():
+    def code_operator_and(self):
         actions.insert(" && ")
 
-    def code_operator_or():
+    def code_operator_or(self):
         actions.insert(" || ")
 
-    def code_insert_true():
+    def code_insert_true(self):
         actions.insert("true")
 
-    def code_insert_false():
+    def code_insert_false(self):
         actions.insert("false")
 
-    def code_operator_lambda():
+    def code_operator_lambda(self):
         actions.insert(" => ")
 
-    def code_insert_null():
+    def code_insert_null(self):
         actions.insert("null")
 
-    def code_insert_is_null():
+    def code_insert_is_null(self):
         actions.insert(" == null")
 
-    def code_insert_is_not_null():
+    def code_insert_is_not_null(self):
         actions.insert(" != null")
 
-    def code_comment_line_prefix():
+    def code_comment_line_prefix(self):
         actions.insert("# ")
 
-    def code_state_for():
+    def code_state_for(self):
         actions.user.insert_between("for ", " in")

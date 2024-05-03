@@ -12,7 +12,7 @@ def do_disable(e):
 
 @delay_mod.action_class
 class DelayedSpeechOffActions:
-    def delayed_speech_on():
+    def delayed_speech_on(self):
         """Activates a "temporary speech" mode that can be disabled lazily,
         so that the actual disable command happens after whatever phrase
         finishes next."""
@@ -21,7 +21,7 @@ class DelayedSpeechOffActions:
             delayed_enabled = True
             actions.speech.enable()
 
-    def delayed_speech_off():
+    def delayed_speech_off(self):
         """Disables "temporary speech" mode lazily, meaning that the next
         phrase that finishes will turn speech off."""
         global delayed_enabled

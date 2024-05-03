@@ -12,5 +12,5 @@ mod.tag(
 
 @mod.action_class
 class Actions:
-    def code_operator_lambda():
+    def code_operator_lambda(self):
         """code_operator_lambda"""

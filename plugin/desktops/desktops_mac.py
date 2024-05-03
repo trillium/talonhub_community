@@ -32,20 +32,20 @@ class MacActions:
         if number < 10:
             actions.key(f"ctrl-{number}")
 
-    def desktop_next():
+    def desktop_next(self):
         actions.key("ctrl-right")
 
-    def desktop_last():
+    def desktop_last(self):
         actions.key("ctrl-left")
 
-    def desktop_show():
+    def desktop_show(self):
         actions.key("ctrl-up")
 
-    def window_move_desktop_left():
+    def window_move_desktop_left(self):
         with _drag_window_mac():
             actions.user.desktop_last()
 
-    def window_move_desktop_right():
+    def window_move_desktop_right(self):
         with _drag_window_mac():
             actions.user.desktop_next()
 

@@ -90,14 +90,14 @@ forced_language = ""
 
 @ctx.action_class("code")
 class CodeActions:
-    def language():
+    def language(self):
         file_extension = actions.win.file_ext()
         return extension_lang_map.get(file_extension, "")
 
 
 @ctx_forced.action_class("code")
 class ForcedCodeActions:
-    def language():
+    def language(self):
         return forced_language
 
 
@@ -113,7 +113,7 @@ class Actions:
         ctx.tags = []
         ctx.tags = ["user.code_language_forced"]
 
-    def code_clear_language_mode():
+    def code_clear_language_mode(self):
         """Clears the active language mode, and re-enables code.language: extension matching"""
         global forced_language
         forced_language = ""

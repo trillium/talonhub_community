@@ -8,8 +8,8 @@ mod.tag("code_data_bool", desc="Tag for enabling commands for inserting Boolean 
 
 @mod.action_class
 class Actions:
-    def code_insert_true():
+    def code_insert_true(self):
         """Insert True value"""
 
-    def code_insert_false():
+    def code_insert_false(self):
         """Insert False value"""

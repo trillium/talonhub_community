@@ -10,20 +10,20 @@ mod.apps.one_password = "app.name: 1Password.exe"
 
 @mod.action_class
 class Actions:
-    def password_fill():
+    def password_fill(self):
         """fill the password"""
 
-    def password_show():
+    def password_show(self):
         """show the password"""
 
-    def password_new():
+    def password_new(self):
         """New password"""
 
-    def password_duplicate():
+    def password_duplicate(self):
         """Duplicate password"""
 
-    def password_edit():
+    def password_edit(self):
         """Edit password"""
 
-    def password_delete():
+    def password_delete(self):
         """Delete password"""

@@ -9,23 +9,23 @@ class Actions:
         """change the current desktop"""
         app.notify("Not supported on this operating system")
 
-    def desktop_show():
+    def desktop_show(self):
         """shows the current desktops"""
         app.notify("Not supported on this operating system")
 
-    def desktop_next():
+    def desktop_next(self):
         """move to next desktop"""
         app.notify("Not supported on this operating system")
 
-    def desktop_last():
+    def desktop_last(self):
         """move to previous desktop"""
         app.notify("Not supported on this operating system")
 
-    def window_move_desktop_left():
+    def window_move_desktop_left(self):
         """move the current window to the desktop to the left"""
         app.notify("Not supported on this operating system")
 
-    def window_move_desktop_right():
+    def window_move_desktop_right(self):
         """move the current window to the desktop to the right"""
         app.notify("Not supported on this operating system")
 

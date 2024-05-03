@@ -22,10 +22,10 @@ app: nautilus
 @ctx.action_class("app")
 class AppActions:
     # app.tabs
-    def tab_next():
+    def tab_next(self):
         actions.key("ctrl-pagedown")
 
-    def tab_previous():
+    def tab_previous(self):
         actions.key("ctrl-pageup")
 
 
@@ -36,16 +36,16 @@ class UserActions:
         actions.key(f"alt-{number}")
 
     # user.file_manager
-    def file_manager_go_back():
+    def file_manager_go_back(self):
         actions.key("alt-left")
 
-    def file_manager_go_forward():
+    def file_manager_go_forward(self):
         actions.key("alt-right")
 
-    def file_manager_open_parent():
+    def file_manager_open_parent(self):
         actions.key("alt-up")
 
-    def file_manager_show_properties():
+    def file_manager_show_properties(self):
         actions.key("ctrl-i")
 
     def file_manager_open_directory(path: str):
@@ -58,7 +58,7 @@ class UserActions:
         if name:
             actions.insert(name)
 
-    def file_manager_terminal_here():
+    def file_manager_terminal_here(self):
         actions.key("ctrl-l")
         with clip.capture() as path:
             actions.edit.copy()

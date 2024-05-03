@@ -17,13 +17,13 @@ app: safari
 
 @ctx.action_class("user")
 class UserActions:
-    def browser_open_address_in_new_tab():
+    def browser_open_address_in_new_tab(self):
         actions.key("cmd-enter")
 
 
 @ctx.action_class("browser")
 class BrowserActions:
-    def address() -> str:
+    def address(self) -> str:
         try:
             window = ui.active_app().windows()[0]
         except IndexError:
@@ -48,19 +48,19 @@ class BrowserActions:
             )
         return address
 
-    def bookmark_tabs():
+    def bookmark_tabs(self):
         raise NotImplementedError(
             "Safari doesn't have a default shortcut for this functionality but it can be configured"
         )
 
-    def show_clear_cache():
+    def show_clear_cache(self):
         raise NotImplementedError("Safari doesn't support this functionality")
 
-    def reload_hard():
+    def reload_hard(self):
         actions.key("cmd-alt-r")
 
-    def show_downloads():
+    def show_downloads(self):
         actions.key("cmd-alt-l")
 
-    def show_extensions():
+    def show_extensions(self):
         actions.key("cmd-, tab:8 space")

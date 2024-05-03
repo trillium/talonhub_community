@@ -18,16 +18,16 @@ app: atril
 @ctx.action_class("user")
 class UserActions:
     # user.pages
-    def page_current():
+    def page_current(self):
         actions.key("ctrl-l")
         page = actions.edit.selected_text()
         actions.key("right escape")
         return int(page)
 
-    def page_next():
+    def page_next(self):
         actions.key("ctrl-pagedown")
 
-    def page_previous():
+    def page_previous(self):
         actions.key("ctrl-pageup")
 
     def page_jump(number: int):
@@ -35,5 +35,5 @@ class UserActions:
         actions.insert(str(number))
         actions.key("enter")
 
-    def page_final():
+    def page_final(self):
         actions.key("ctrl-end")

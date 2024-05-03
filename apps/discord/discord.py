@@ -26,60 +26,60 @@ ctx.lists["user.discord_destination"] = {
 
 @mod.action_class
 class discord_actions:
-    def discord_mentions_last():
+    def discord_mentions_last(self):
         """Go up to channel with unread mentions"""
 
-    def discord_mentions_next():
+    def discord_mentions_next(self):
         """Go down to channel with unread mentions"""
 
-    def discord_oldest_unread():
+    def discord_oldest_unread(self):
         """Go to oldest unread message"""
 
-    def discord_toggle_pins():
+    def discord_toggle_pins(self):
         """Toggle pins popout"""
 
-    def discord_toggle_inbox():
+    def discord_toggle_inbox(self):
         """Toggle inbox popout"""
 
-    def discord_toggle_members():
+    def discord_toggle_members(self):
         """Toggle channel member list"""
 
-    def discord_emoji_picker():
+    def discord_emoji_picker(self):
         """Toggle emoji picker"""
 
-    def discord_gif_picker():
+    def discord_gif_picker(self):
         """Toggle gif picker"""
 
-    def discord_sticker_picker():
+    def discord_sticker_picker(self):
         """Toggle sticker picker"""
 
-    def discord_mark_inbox_read():
+    def discord_mark_inbox_read(self):
         """Mark top inbox channel read"""
 
-    def discord_mute():
+    def discord_mute(self):
         """Toggle mute"""
 
-    def discord_deafen():
+    def discord_deafen(self):
         """Toggle deafen"""
 
-    def discord_answer_call():
+    def discord_answer_call(self):
         """Answer incoming call"""
 
-    def discord_decline_call():
+    def discord_decline_call(self):
         """Decline incoming call"""
 
     def discord_quick_switcher(dest_type: str, dest_search: str):
         """Open up the quick switcher, optionally specifying a type of destination"""
 
-    def discord_go_current_call():
+    def discord_go_current_call(self):
         """Go to current call"""
 
-    def discord_toggle_dms():
+    def discord_toggle_dms(self):
         """Toggle between dms and your most recent server"""
 
 
 @ctx.action_class("user")
 class UserActions:
     # Navigation: Channels
-    def messaging_open_channel_picker():
+    def messaging_open_channel_picker(self):
         actions.user.discord_quick_switcher("#", "")

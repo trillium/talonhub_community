@@ -10,5 +10,5 @@ mod.tag(
 
 @mod.action_class
 class Actions:
-    def code_comment_documentation():
+    def code_comment_documentation(self):
         """Inserts a document comment and positions the cursor appropriately"""

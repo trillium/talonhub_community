@@ -336,33 +336,33 @@ def reformat_last_utterance(formatter):
 
 @mod.action_class
 class Actions:
-    def dictation_format_reset():
+    def dictation_format_reset(self):
         """Resets the dictation formatter"""
         return dictation_formatter.reset()
 
-    def dictation_format_cap():
+    def dictation_format_cap(self):
         """Sets the dictation formatter to capitalize"""
         dictation_formatter.cap()
 
-    def dictation_format_no_cap():
+    def dictation_format_no_cap(self):
         """Sets the dictation formatter to not capitalize"""
         dictation_formatter.no_cap()
 
-    def dictation_format_no_space():
+    def dictation_format_no_space(self):
         """Sets the dictation formatter to not prepend a space"""
         dictation_formatter.no_space()
 
-    def dictation_reformat_cap():
+    def dictation_reformat_cap(self):
         """Capitalizes the last utterance"""
         reformat_last_utterance(
             lambda s: format_first_letter(s, lambda c: c.capitalize())
         )
 
-    def dictation_reformat_no_cap():
+    def dictation_reformat_no_cap(self):
         """Lowercases the last utterance"""
         reformat_last_utterance(lambda s: format_first_letter(s, lambda c: c.lower()))
 
-    def dictation_reformat_no_space():
+    def dictation_reformat_no_space(self):
         """Removes space before the last utterance"""
         reformat_last_utterance(lambda s: s[1:] if s.startswith(" ") else s)
 

@@ -43,7 +43,7 @@ def gui(gui: imgui.GUI):
 
 @mod.action_class
 class Actions:
-    def microphone_selection_toggle():
+    def microphone_selection_toggle(self):
         """Show GUI for choosing the Talon microphone"""
         if gui.showing:
             gui.hide()
@@ -51,7 +51,7 @@ class Actions:
             update_microphone_list()
             gui.show()
 
-    def microphone_selection_hide():
+    def microphone_selection_hide(self):
         """Hide the microphone selection GUI"""
         gui.hide()
 

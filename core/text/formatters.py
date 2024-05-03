@@ -319,7 +319,7 @@ class Actions:
         actions.insert(text)
         return text
 
-    def get_formatters_words() -> dict:
+    def get_formatters_words(self) -> dict:
         """returns a list of words currently used as formatters, and a demonstration string using those formatters"""
         formatters_help_demo = {}
         for name in sorted(set(formatter_words)):

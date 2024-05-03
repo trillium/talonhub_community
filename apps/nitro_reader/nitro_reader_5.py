@@ -20,17 +20,17 @@ app: nitro_reader_five
 @ctx.action_class("app")
 class app_actions:
     # app.tabs
-    def tab_open():
+    def tab_open(self):
         actions.key("ctrl-shift-o")
 
 
 @ctx.action_class("user")
 class UserActions:
     # user.pages
-    def page_next():
+    def page_next(self):
         actions.key("right")
 
-    def page_previous():
+    def page_previous(self):
         actions.key("left")
 
     def page_jump(number: int):
@@ -39,5 +39,5 @@ class UserActions:
         actions.insert(str(number))
         actions.key("enter alt:2")
 
-    def page_final():
+    def page_final(self):
         actions.key("end")

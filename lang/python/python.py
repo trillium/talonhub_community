@@ -148,167 +148,167 @@ ctx.lists["user.python_exception"] = {
 
 @ctx.action_class("user")
 class UserActions:
-    def code_operator_lambda():
+    def code_operator_lambda(self):
         actions.user.insert_between("lambda ", ": ")
 
-    def code_operator_subscript():
+    def code_operator_subscript(self):
         actions.user.insert_between("[", "]")
 
-    def code_operator_assignment():
+    def code_operator_assignment(self):
         actions.auto_insert(" = ")
 
-    def code_operator_subtraction():
+    def code_operator_subtraction(self):
         actions.auto_insert(" - ")
 
-    def code_operator_subtraction_assignment():
+    def code_operator_subtraction_assignment(self):
         actions.auto_insert(" -= ")
 
-    def code_operator_addition():
+    def code_operator_addition(self):
         actions.auto_insert(" + ")
 
-    def code_operator_addition_assignment():
+    def code_operator_addition_assignment(self):
         actions.auto_insert(" += ")
 
-    def code_operator_multiplication():
+    def code_operator_multiplication(self):
         actions.auto_insert(" * ")
 
-    def code_operator_multiplication_assignment():
+    def code_operator_multiplication_assignment(self):
         actions.auto_insert(" *= ")
 
-    def code_operator_exponent():
+    def code_operator_exponent(self):
         actions.auto_insert(" ** ")
 
-    def code_operator_division():
+    def code_operator_division(self):
         actions.auto_insert(" / ")
 
-    def code_operator_division_assignment():
+    def code_operator_division_assignment(self):
         actions.auto_insert(" /= ")
 
-    def code_operator_modulo():
+    def code_operator_modulo(self):
         actions.auto_insert(" % ")
 
-    def code_operator_modulo_assignment():
+    def code_operator_modulo_assignment(self):
         actions.auto_insert(" %= ")
 
-    def code_operator_equal():
+    def code_operator_equal(self):
         actions.auto_insert(" == ")
 
-    def code_operator_not_equal():
+    def code_operator_not_equal(self):
         actions.auto_insert(" != ")
 
-    def code_operator_greater_than():
+    def code_operator_greater_than(self):
         actions.auto_insert(" > ")
 
-    def code_operator_greater_than_or_equal_to():
+    def code_operator_greater_than_or_equal_to(self):
         actions.auto_insert(" >= ")
 
-    def code_operator_less_than():
+    def code_operator_less_than(self):
         actions.auto_insert(" < ")
 
-    def code_operator_less_than_or_equal_to():
+    def code_operator_less_than_or_equal_to(self):
         actions.auto_insert(" <= ")
 
-    def code_operator_and():
+    def code_operator_and(self):
         actions.auto_insert(" and ")
 
-    def code_operator_or():
+    def code_operator_or(self):
         actions.auto_insert(" or ")
 
-    def code_operator_in():
+    def code_operator_in(self):
         actions.auto_insert(" in ")
 
-    def code_operator_not_in():
+    def code_operator_not_in(self):
         actions.auto_insert(" not in ")
 
-    def code_operator_bitwise_and():
+    def code_operator_bitwise_and(self):
         actions.auto_insert(" & ")
 
-    def code_operator_bitwise_and_assignment():
+    def code_operator_bitwise_and_assignment(self):
         actions.auto_insert(" &= ")
 
-    def code_operator_bitwise_or():
+    def code_operator_bitwise_or(self):
         actions.auto_insert(" | ")
 
-    def code_operator_bitwise_or_assignment():
+    def code_operator_bitwise_or_assignment(self):
         actions.auto_insert(" |= ")
 
-    def code_operator_bitwise_exclusive_or():
+    def code_operator_bitwise_exclusive_or(self):
         actions.auto_insert(" ^ ")
 
-    def code_operator_bitwise_exclusive_or_assignment():
+    def code_operator_bitwise_exclusive_or_assignment(self):
         actions.auto_insert(" ^= ")
 
-    def code_operator_bitwise_left_shift():
+    def code_operator_bitwise_left_shift(self):
         actions.auto_insert(" << ")
 
-    def code_operator_bitwise_left_shift_assignment():
+    def code_operator_bitwise_left_shift_assignment(self):
         actions.auto_insert(" <<= ")
 
-    def code_operator_bitwise_right_shift():
+    def code_operator_bitwise_right_shift(self):
         actions.auto_insert(" >> ")
 
-    def code_operator_bitwise_right_shift_assignment():
+    def code_operator_bitwise_right_shift_assignment(self):
         actions.auto_insert(" >>= ")
 
-    def code_self():
+    def code_self(self):
         actions.auto_insert("self")
 
-    def code_operator_object_accessor():
+    def code_operator_object_accessor(self):
         actions.auto_insert(".")
 
-    def code_insert_null():
+    def code_insert_null(self):
         actions.auto_insert("None")
 
-    def code_insert_is_null():
+    def code_insert_is_null(self):
         actions.auto_insert(" is None")
 
-    def code_insert_is_not_null():
+    def code_insert_is_not_null(self):
         actions.auto_insert(" is not None")
 
-    def code_state_if():
+    def code_state_if(self):
         actions.user.insert_between("if ", ":")
 
-    def code_state_else_if():
+    def code_state_else_if(self):
         actions.user.insert_between("elif ", ":")
 
-    def code_state_else():
+    def code_state_else(self):
         actions.insert("else:")
         actions.key("enter")
 
-    def code_state_switch():
+    def code_state_switch(self):
         actions.user.insert_between("match ", ":")
 
-    def code_state_case():
+    def code_state_case(self):
         actions.user.insert_between("case ", ":")
 
-    def code_state_for():
+    def code_state_for(self):
         actions.auto_insert("for ")
 
-    def code_state_for_each():
+    def code_state_for_each(self):
         actions.user.insert_between("for ", " in ")
 
-    def code_state_while():
+    def code_state_while(self):
         actions.user.insert_between("while ", ":")
 
-    def code_define_class():
+    def code_define_class(self):
         actions.auto_insert("class ")
 
-    def code_import():
+    def code_import(self):
         actions.auto_insert("import ")
 
-    def code_comment_line_prefix():
+    def code_comment_line_prefix(self):
         actions.auto_insert("# ")
 
-    def code_state_return():
+    def code_state_return(self):
         actions.insert("return ")
 
-    def code_insert_true():
+    def code_insert_true(self):
         actions.auto_insert("True")
 
-    def code_insert_false():
+    def code_insert_false(self):
         actions.auto_insert("False")
 
-    def code_comment_documentation():
+    def code_comment_documentation(self):
         actions.user.insert_between('"""', '"""')
 
     def code_insert_function(text: str, selection: str):

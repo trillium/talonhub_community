@@ -14,12 +14,12 @@ tag: user.generic_unix_shell
 class Actions:
     # Implements the functions from terminal.py for unix shells
 
-    def terminal_list_directories():
+    def terminal_list_directories(self):
         """Lists directories"""
         actions.insert("ls")
         actions.key("enter")
 
-    def terminal_list_all_directories():
+    def terminal_list_all_directories(self):
         """Lists all directories including hidden"""
         actions.insert("ls -a")
         actions.key("enter")
@@ -30,17 +30,17 @@ class Actions:
         if path:
             actions.key("enter")
 
-    def terminal_change_directory_root():
+    def terminal_change_directory_root(self):
         """Root of current drive"""
         actions.insert("cd /")
         actions.key("enter")
 
-    def terminal_clear_screen():
+    def terminal_clear_screen(self):
         """Clear screen"""
         actions.insert("clear")
         actions.key("enter")
 
-    def terminal_run_last():
+    def terminal_run_last(self):
         """Repeats the last command"""
         actions.key("up enter")
 
@@ -49,7 +49,7 @@ class Actions:
         actions.key("ctrl-r")
         actions.insert(command)
 
-    def terminal_kill_all():
+    def terminal_kill_all(self):
         """kills the running command"""
         actions.key("ctrl-c")
         actions.insert("y")

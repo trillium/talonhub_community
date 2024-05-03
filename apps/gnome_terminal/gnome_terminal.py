@@ -29,39 +29,39 @@ class user_actions:
 @ctx.action_class("app")
 class app_actions:
     # app.tabs
-    def tab_open():
+    def tab_open(self):
         actions.key("ctrl-shift-t")
 
-    def tab_previous():
+    def tab_previous(self):
         actions.key("ctrl-pageup")
 
-    def tab_next():
+    def tab_next(self):
         actions.key("ctrl-pagedown")
 
-    def tab_close():
+    def tab_close(self):
         actions.key("ctrl-shift-w")
 
     # global (overwrite linux/app.py)
-    def window_open():
+    def window_open(self):
         actions.key("ctrl-shift-n")
 
-    def window_close():
+    def window_close(self):
         actions.key("ctrl-shift-q")
 
 
 # global (overwrite linux/edit.py)
 @ctx.action_class("edit")
 class EditActions:
-    def page_down():
+    def page_down(self):
         actions.key("shift-pagedown")
 
-    def page_up():
+    def page_up(self):
         actions.key("shift-pageup")
 
-    def paste():
+    def paste(self):
         actions.key("ctrl-shift-v")
 
-    def copy():
+    def copy(self):
         actions.key("ctrl-shift-c")
 
     def find(text: str = None):
@@ -69,25 +69,25 @@ class EditActions:
         if text:
             actions.insert(text)
 
-    def delete_line():
+    def delete_line(self):
         actions.edit.line_start()
         actions.key("ctrl-k")
 
     # afaik not possible in gnome-terminal
-    def extend_left():
+    def extend_left(self):
         pass
 
-    def extend_right():
+    def extend_right(self):
         pass
 
-    def extend_up():
+    def extend_up(self):
         pass
 
-    def extend_down():
+    def extend_down(self):
         pass
 
-    def extend_word_left():
+    def extend_word_left(self):
         pass
 
-    def extend_word_right():
+    def extend_word_right(self):
         pass

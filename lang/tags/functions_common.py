@@ -24,7 +24,7 @@ mod.tag(
 
 @mod.action_class
 class Actions:
-    def code_toggle_functions():
+    def code_toggle_functions(self):
         """GUI: List functions for active language"""
         global function_list
         if gui_functions.showing:

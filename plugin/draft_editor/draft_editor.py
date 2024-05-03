@@ -66,7 +66,7 @@ last_draft = None
 
 @mod.action_class
 class Actions:
-    def draft_editor_open():
+    def draft_editor_open(self):
         """Open draft editor"""
         global original_window
         original_window = ui.active_window()
@@ -80,15 +80,15 @@ class Actions:
             actions.user.paste(selected_text)
         add_tag("user.draft_editor_active")
 
-    def draft_editor_submit():
+    def draft_editor_submit(self):
         """Submit/save draft editor"""
         close_editor(submit_draft=True)
 
-    def draft_editor_discard():
+    def draft_editor_discard(self):
         """Discard draft editor"""
         close_editor(submit_draft=False)
 
-    def draft_editor_paste_last():
+    def draft_editor_paste_last(self):
         """Paste last submitted draft"""
         if last_draft:
             actions.user.paste(last_draft)

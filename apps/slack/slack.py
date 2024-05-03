@@ -25,6 +25,6 @@ app: slack
 
 @ctx.action_class("edit")
 class EditActions:
-    def line_insert_down():
+    def line_insert_down(self):
         actions.edit.line_end()
         actions.key("shift-enter")

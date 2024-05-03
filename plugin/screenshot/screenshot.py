@@ -29,18 +29,18 @@ class Actions:
         selected_screen = get_screen(screen_number)
         actions.user.screenshot_rect(selected_screen.rect)
 
-    def screenshot_window():
+    def screenshot_window(self):
         """Takes a screenshot of the active window and saves it to the pictures folder"""
         win = ui.active_window()
         actions.user.screenshot_rect(win.rect, title=win.app.name)
 
-    def screenshot_selection():
+    def screenshot_selection(self):
         """Triggers an application that is capable of taking a screenshot of a portion of the screen"""
 
-    def screenshot_selection_clip():
+    def screenshot_selection_clip(self):
         """Triggers an application that is capable of taking a screenshot of a portion of the screen and adding to clipboard"""
 
-    def screenshot_settings():
+    def screenshot_settings(self):
         """Opens the settings UI for screenshots.
         Only applies to Mac for now
         """
@@ -55,7 +55,7 @@ class Actions:
         selected_screen = get_screen(screen_number)
         clipboard_rect(selected_screen.rect)
 
-    def screenshot_window_clipboard():
+    def screenshot_window_clipboard(self):
         """Takes a screenshot of the active window and saves it to the clipboard"""
         win = ui.active_window()
         clipboard_rect(win.rect)
@@ -114,10 +114,10 @@ os: mac
 
 @ctx_mac.action_class("user")
 class UserActionsMac:
-    def screenshot_selection():
+    def screenshot_selection(self):
         actions.key("cmd-shift-4")
 
-    def screenshot_selection_clip():
+    def screenshot_selection_clip(self):
         actions.key("cmd-ctrl-shift-4")
 
 
@@ -129,10 +129,10 @@ os: windows
 
 @ctx_win.action_class("user")
 class UserActionsWin:
-    def screenshot_selection():
+    def screenshot_selection(self):
         actions.key("super-shift-s")
 
-    def screenshot_selection_clip():
+    def screenshot_selection_clip(self):
         actions.key("super-shift-s")
 
 
@@ -144,5 +144,5 @@ os: linux
 
 @ctx_linux.action_class("user")
 class UserActionsLinux:
-    def screenshot_selection():
+    def screenshot_selection(self):
         actions.key("shift-printscr")

@@ -23,16 +23,16 @@ class Actions:
             actions.edit.extend_line_down()
         actions.edit.extend_line_end()
 
-    def extend_camel_left():
+    def extend_camel_left(self):
         """Extends the selection by camel/subword to the left"""
 
-    def extend_camel_right():
+    def extend_camel_right(self):
         """Extends the selection by camel/subword to the right"""
 
-    def camel_left():
+    def camel_left(self):
         """Moves cursor to the left by camel case/subword"""
 
-    def camel_right():
+    def camel_right(self):
         """Move cursor to the right by camel case/subword"""
 
     def line_clone(line: int):

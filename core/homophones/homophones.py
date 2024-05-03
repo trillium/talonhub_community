@@ -181,7 +181,7 @@ def homophones_canonical(m) -> str:
 
 @mod.action_class
 class Actions:
-    def homophones_hide():
+    def homophones_hide(self):
         """Hides the homophones display"""
         close_homophones()
 
@@ -189,7 +189,7 @@ class Actions:
         """Show the homophones display"""
         raise_homophones(m, False, False)
 
-    def homophones_show_auto():
+    def homophones_show_auto(self):
         """Show homophones for selection, or current word if selection is empty."""
         text = actions.edit.selected_text()
         if text:
@@ -198,7 +198,7 @@ class Actions:
             actions.edit.select_word()
             actions.user.homophones_show_selection()
 
-    def homophones_show_selection():
+    def homophones_show_selection(self):
         """Show the homophones display for the selected text"""
         raise_homophones(actions.edit.selected_text(), False, True)
 
@@ -206,7 +206,7 @@ class Actions:
         """Show the homophones display forcibly"""
         raise_homophones(m, True, False)
 
-    def homophones_force_show_selection():
+    def homophones_force_show_selection(self):
         """Show the homophones display for the selected text forcibly"""
         raise_homophones(actions.edit.selected_text(), True, True)
 

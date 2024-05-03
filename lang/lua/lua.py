@@ -92,78 +92,78 @@ class UserActions:
     ##
     # code_imperative
     ##
-    def code_state_if():
+    def code_state_if(self):
         actions.user.insert_between("if ", " then")
 
-    def code_state_else_if():
+    def code_state_else_if(self):
         actions.user.insert_between("elseif ", " then")
 
-    def code_state_else():
+    def code_state_else(self):
         actions.insert("else\n")
 
-    def code_state_do():
+    def code_state_do(self):
         actions.insert("repeat\n")
 
-    def code_state_for():
+    def code_state_for(self):
         actions.user.insert_between("for ", " do")
 
-    def code_state_go_to():
+    def code_state_go_to(self):
         actions.insert("goto ")
 
-    def code_state_while():
+    def code_state_while(self):
         actions.user.insert_between("while ", " do")
 
-    def code_state_return():
+    def code_state_return(self):
         actions.insert("return ")
 
-    def code_break():
+    def code_break(self):
         actions.insert("break ")
 
     # Assumes a ::continue:: label
-    def code_next():
+    def code_next(self):
         actions.insert("goto continue")
 
-    def code_try_catch():
+    def code_try_catch(self):
         actions.user.insert_between("pcall(", ")")
 
     ##
     # code_comment_line
     ##
-    def code_comment_line_prefix():
+    def code_comment_line_prefix(self):
         actions.insert("-- ")
 
     ##
     # code_comment_block
     ##
-    def code_comment_block():
+    def code_comment_block(self):
         actions.insert("--[[\n\n--]]")
         actions.edit.up()
 
-    def code_comment_block_prefix():
+    def code_comment_block_prefix(self):
         actions.insert("--[[")
 
-    def code_comment_block_suffix():
+    def code_comment_block_suffix(self):
         actions.insert("--]]")
 
     ##
     # code_data_bool
     ##
-    def code_insert_true():
+    def code_insert_true(self):
         actions.insert("true")
 
-    def code_insert_false():
+    def code_insert_false(self):
         actions.insert("false")
 
     ##
     # code_data_null
     ##
-    def code_insert_null():
+    def code_insert_null(self):
         actions.insert("nil")
 
-    def code_insert_is_null():
+    def code_insert_is_null(self):
         actions.insert(" == nil")
 
-    def code_insert_is_not_null():
+    def code_insert_is_not_null(self):
         actions.insert(" ~= nil")
 
     ##
@@ -204,7 +204,7 @@ class UserActions:
     ##
     # code_libraries
     ##
-    def code_import():
+    def code_import(self):
         actions.user.insert_between("local ", " = require('')")
 
     ##
@@ -216,55 +216,55 @@ class UserActions:
     ##
     # code_operators_array
     ##
-    def code_operator_subscript():
+    def code_operator_subscript(self):
         actions.user.insert_between("[", "]")
 
     ##
     # code_operators_assignment
     ##
-    def code_operator_assignment():
+    def code_operator_assignment(self):
         actions.insert(" = ")
 
     ##
     # code_operators_math
     ##
-    def code_operator_subtraction():
+    def code_operator_subtraction(self):
         actions.insert(" - ")
 
-    def code_operator_addition():
+    def code_operator_addition(self):
         actions.insert(" + ")
 
-    def code_operator_multiplication():
+    def code_operator_multiplication(self):
         actions.insert(" * ")
 
-    def code_operator_division():
+    def code_operator_division(self):
         actions.insert(" / ")
 
-    def code_operator_modulo():
+    def code_operator_modulo(self):
         actions.insert(" % ")
 
-    def code_operator_equal():
+    def code_operator_equal(self):
         actions.insert(" == ")
 
-    def code_operator_not_equal():
+    def code_operator_not_equal(self):
         actions.insert(" ~= ")
 
-    def code_operator_greater_than():
+    def code_operator_greater_than(self):
         actions.insert(" > ")
 
-    def code_operator_greater_than_or_equal_to():
+    def code_operator_greater_than_or_equal_to(self):
         actions.insert(" >= ")
 
-    def code_operator_less_than():
+    def code_operator_less_than(self):
         actions.insert(" < ")
 
-    def code_operator_less_than_or_equal_to():
+    def code_operator_less_than_or_equal_to(self):
         actions.insert(" <= ")
 
-    def code_operator_and():
+    def code_operator_and(self):
         actions.insert(" and ")
 
-    def code_operator_or():
+    def code_operator_or(self):
         actions.insert(" or ")
 
     ###
@@ -275,31 +275,31 @@ class UserActions:
     #       > 5.2 assumes native bitwise operators
     # TODO: Possibly add settings to define which library to use, as 5.2
     # includes bit32. Neovim uses luajit, which uses Lua BitOp
-    def code_operator_bitwise_and():
+    def code_operator_bitwise_and(self):
         if settings.get("user.lua_version") > 5.2:
             actions.insert(" & ")
         else:
             actions.insert(" bit.band() ")
 
-    def code_operator_bitwise_or():
+    def code_operator_bitwise_or(self):
         if settings.get("user.lua_version") > 5.2:
             actions.insert(" | ")
         else:
             actions.insert(" bit.bor() ")
 
-    def code_operator_bitwise_exclusive_or():
+    def code_operator_bitwise_exclusive_or(self):
         if settings.get("user.lua_version") > 5.2:
             actions.insert(" ~ ")
         else:
             actions.insert(" bit.xor() ")
 
-    def code_operator_bitwise_left_shift():
+    def code_operator_bitwise_left_shift(self):
         if settings.get("user.lua_version") > 5.2:
             actions.insert(" << ")
         else:
             actions.insert(" bit.lshift() ")
 
-    def code_operator_bitwise_right_shift():
+    def code_operator_bitwise_right_shift(self):
         if settings.get("user.lua_version") > 5.2:
             actions.insert(" >> ")
         else:

@@ -33,27 +33,27 @@ app: firefox
 
 @mod.action_class
 class Actions:
-    def firefox_bookmarks_sidebar():
+    def firefox_bookmarks_sidebar(self):
         """Toggles the Firefox bookmark sidebar"""
 
-    def firefox_history_sidebar():
+    def firefox_history_sidebar(self):
         """Toggles the Firefox history sidebar"""
 
 
 @ctx.action_class("user")
 class UserActions:
-    def tab_close_wrapper():
+    def tab_close_wrapper(self):
         actions.sleep("180ms")
         actions.app.tab_close()
 
 
 @ctx.action_class("browser")
 class BrowserActions:
-    def focus_page():
+    def focus_page(self):
         actions.browser.focus_address()
         actions.edit.find()
         actions.sleep("180ms")
         actions.key("escape")
 
-    def go_home():
+    def go_home(self):
         actions.key("alt-home")

@@ -21,7 +21,7 @@ def create_name(text, max_len=20):
 
 @mod.action_class
 class Actions:
-    def talon_add_context_clipboard_python():
+    def talon_add_context_clipboard_python(self):
         """Adds os-specific context info to the clipboard for the focused app for .py files. Assumes you've a Module named mod declared."""
         friendly_name = actions.app.name()
         # print(actions.app.executable())
@@ -42,7 +42,7 @@ class Actions:
 
         clip.set_text(result)
 
-    def talon_add_context_clipboard():
+    def talon_add_context_clipboard(self):
         """Adds os-specific context info to the clipboard for the focused app for .talon files"""
         friendly_name = actions.app.name()
         # print(actions.app.executable())
@@ -77,13 +77,13 @@ class Actions:
         print(str(registry.lists[name]))
         print("***********************")
 
-    def talon_debug_tags():
+    def talon_debug_tags(self):
         """Dumps the active tags to the console"""
         print("**** Dumping active tags *** ")
         print(str(registry.tags))
         print("***********************")
 
-    def talon_debug_modes():
+    def talon_debug_modes(self):
         """Dumps active modes to the console"""
         print("**** Active modes ****")
         print(scope.get("mode"))
@@ -107,13 +107,13 @@ class Actions:
         print(registry.settings[name])
         print("***********************")
 
-    def talon_debug_all_settings():
+    def talon_debug_all_settings(self):
         """Dumps all settings to the console"""
         print("**** Dumping settings **** ")
         print(str(registry.settings))
         print("***********************")
 
-    def talon_get_active_context() -> str:
+    def talon_get_active_context(self) -> str:
         """Returns active context info"""
         name = actions.app.name()
         executable = actions.app.executable()
@@ -123,12 +123,12 @@ class Actions:
         result = f"Name: {name}\nExecutable: {executable}\nBundle: {bundle}\nTitle: {title}\nhostname: {hostname}"
         return result
 
-    def talon_get_hostname() -> str:
+    def talon_get_hostname(self) -> str:
         """Returns the hostname"""
         hostname = scope.get("hostname")
         return hostname
 
-    def talon_get_active_application_info() -> str:
+    def talon_get_active_application_info(self) -> str:
         """Returns all active app info to the cliboard"""
         result = str(ui.active_app())
         result += "\nActive window: " + str(ui.active_window())
@@ -139,7 +139,7 @@ class Actions:
         result += "\nTitle: " + actions.win.title()
         return result
 
-    def talon_version_info() -> str:
+    def talon_version_info(self) -> str:
         """Returns talon & operation system verison information"""
         result = (
             f"Version: {app.version}, Branch: {app.branch}, OS: {platform.platform()}"

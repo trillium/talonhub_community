@@ -11,5 +11,5 @@ mod.tag(
 
 @mod.action_class
 class Actions:
-    def code_import():
+    def code_import(self):
         """import/using equivalent"""

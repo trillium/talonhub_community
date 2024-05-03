@@ -27,16 +27,16 @@ app: okular
 @ctx.action_class("user")
 class UserActions:
     # user.pages
-    def page_current():
+    def page_current(self):
         actions.key("ctrl-g")
         page = actions.edit.selected_text()
         actions.key("escape")
         return int(page)
 
-    def page_next():
+    def page_next(self):
         actions.key("l")
 
-    def page_previous():
+    def page_previous(self):
         actions.key("h")
 
     def page_jump(number: int):
@@ -45,5 +45,5 @@ class UserActions:
         actions.insert(str(number))
         actions.key("enter")
 
-    def page_final():
+    def page_final(self):
         actions.key("ctrl-end")

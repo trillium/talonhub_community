@@ -42,13 +42,13 @@ class Actions:
 
 @ctx.action_class("user")
 class UserActions:
-    def tab_close_wrapper():
+    def tab_close_wrapper(self):
         actions.sleep("180ms")
         actions.app.tab_close()
 
 
 @ctx.action_class("browser")
 class BrowserActions:
-    def show_extensions():
+    def show_extensions(self):
         actions.app.tab_open()
         actions.browser.go("chrome://extensions")

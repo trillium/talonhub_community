@@ -48,32 +48,32 @@ speech_system.register("phrase", on_phrase)
 
 @mod.action_class
 class Actions:
-    def history_toggle():
+    def history_toggle(self):
         """Toggles viewing the history"""
         if gui.showing:
             gui.hide()
         else:
             gui.show()
 
-    def history_enable():
+    def history_enable(self):
         """Enables the history"""
         gui.show()
 
-    def history_disable():
+    def history_disable(self):
         """Disables the history"""
         gui.hide()
 
-    def history_clear():
+    def history_clear(self):
         """Clear the history"""
         global history
         history = []
 
-    def history_more():
+    def history_more(self):
         """Show more history"""
         global hist_more
         hist_more = True
 
-    def history_less():
+    def history_less(self):
         """Show less history"""
         global hist_more
         hist_more = False

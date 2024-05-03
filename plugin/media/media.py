@@ -5,7 +5,7 @@ mod = Module()
 
 @mod.action_class
 class Actions:
-    def play_pause():
+    def play_pause(self):
         """Plays or pauses media"""
         if app.platform == "windows":
             actions.key("play_pause")

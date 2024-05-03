@@ -102,49 +102,49 @@ class Actions:
 
 @ctx.action_class("user")
 class UserActions:
-    def cut_line():
+    def cut_line(self):
         actions.edit.line_start()
         actions.user.emacs("kill-line", 1)
 
-    def split_window():
+    def split_window(self):
         actions.user.emacs("split-window-below")
 
-    def split_window_vertically():
+    def split_window_vertically(self):
         actions.user.emacs("split-window-below")
 
-    def split_window_up():
+    def split_window_up(self):
         actions.user.emacs("split-window-below")
 
-    def split_window_down():
+    def split_window_down(self):
         actions.user.emacs("split-window-below")
         actions.user.emacs("other-window")
 
-    def split_window_horizontally():
+    def split_window_horizontally(self):
         actions.user.emacs("split-window-right")
 
-    def split_window_left():
+    def split_window_left(self):
         actions.user.emacs("split-window-right")
 
-    def split_window_right():
+    def split_window_right(self):
         actions.user.emacs("split-window-right")
         actions.user.emacs("other-window")
 
-    def split_clear():
+    def split_clear(self):
         actions.user.emacs("delete-window")
 
-    def split_clear_all():
+    def split_clear_all(self):
         actions.user.emacs("delete-other-windows")
 
-    def split_reset():
+    def split_reset(self):
         actions.user.emacs("balance-windows")
 
-    def split_next():
+    def split_next(self):
         actions.user.emacs("other-window")
 
-    def split_last():
+    def split_last(self):
         actions.user.emacs("other-window", -1)
 
-    def split_flip():
+    def split_flip(self):
         # only works reliably if there are only two panes/windows.
         actions.key("ctrl-x b enter ctrl-x o ctrl-x b enter")
         actions.user.split_last()
@@ -180,100 +180,100 @@ class UserActions:
 
 @ctx.action_class("edit")
 class EditActions:
-    def save():
+    def save(self):
         actions.user.emacs("save-buffer")
 
-    def save_all():
+    def save_all(self):
         actions.user.emacs("save-some-buffers")
 
-    def copy():
+    def copy(self):
         actions.user.emacs("kill-ring-save")
 
-    def cut():
+    def cut(self):
         actions.user.emacs("kill-region")
 
-    def undo():
+    def undo(self):
         actions.user.emacs("undo")
 
-    def paste():
+    def paste(self):
         actions.user.emacs("yank")
 
-    def delete():
+    def delete(self):
         actions.user.emacs("kill-region")
 
-    def file_start():
+    def file_start(self):
         actions.user.emacs("beginning-of-buffer")
 
-    def file_end():
+    def file_end(self):
         actions.user.emacs("end-of-buffer")
 
     # works for eg 'select to top', but not if preceded by other selections :(
-    def extend_file_start():
+    def extend_file_start(self):
         actions.user.emacs("beginning-of-buffer")
 
-    def extend_file_end():
+    def extend_file_end(self):
         actions.user.emacs("end-of-buffer")
 
-    def select_none():
+    def select_none(self):
         actions.user.emacs("keyboard-quit")
 
-    def select_all():
+    def select_all(self):
         actions.user.emacs("mark-whole-buffer")
         # If you don't use transient-mark-mode, maybe do this:
         # actions.key('ctrl-u ctrl-x ctrl-x')
 
-    def word_left():
+    def word_left(self):
         actions.user.emacs("backward-word")
 
-    def word_right():
+    def word_right(self):
         actions.user.emacs("forward-word")
 
-    def extend_word_left():
+    def extend_word_left(self):
         actions.user.emacs_meta("shift-b")
 
-    def extend_word_right():
+    def extend_word_right(self):
         actions.user.emacs_meta("shift-f")
 
-    def sentence_start():
+    def sentence_start(self):
         actions.user.emacs("backward-sentence")
 
-    def sentence_end():
+    def sentence_end(self):
         actions.user.emacs("forward-sentence")
 
-    def extend_sentence_start():
+    def extend_sentence_start(self):
         actions.user.emacs_meta("shift-a")
 
-    def extend_sentence_end():
+    def extend_sentence_end(self):
         actions.user.emacs_meta("shift-e")
 
-    def paragraph_start():
+    def paragraph_start(self):
         actions.user.emacs("backward-paragraph")
 
-    def paragraph_end():
+    def paragraph_end(self):
         actions.user.emacs("forward-paragraph")
 
-    def line_start():
+    def line_start(self):
         actions.user.emacs("move-beginning-of-line")
 
-    def line_end():
+    def line_end(self):
         actions.user.emacs("move-end-of-line")
 
-    def extend_line_start():
+    def extend_line_start(self):
         actions.key("shift-ctrl-a")
 
-    def extend_line_end():
+    def extend_line_end(self):
         actions.key("shift-ctrl-e")
 
-    def line_swap_down():
+    def line_swap_down(self):
         actions.key("down ctrl-x ctrl-t up")
 
-    def line_swap_up():
+    def line_swap_up(self):
         actions.key("ctrl-x ctrl-t up:2")
 
-    def delete_line():
+    def delete_line(self):
         actions.key("ctrl-a ctrl-k")
 
-    def line_clone():
+    def line_clone(self):
         actions.user.emacs_key("ctrl-a meta-1 ctrl-k ctrl-y ctrl-y up meta-m")
 
     def jump_line(n):
@@ -290,21 +290,21 @@ class EditActions:
         # subsequent commands more convenient.
         actions.user.emacs("exchange-point-and-mark")
 
-    def indent_more():
+    def indent_more(self):
         actions.user.emacs("indent-rigidly", 4)
 
-    def indent_less():
+    def indent_less(self):
         actions.user.emacs("indent-rigidly", -4)
 
     # These all perform text-scale-adjust, which examines the actual key pressed, so can't
     # be done with actions.user.emacs.
-    def zoom_in():
+    def zoom_in(self):
         actions.key("ctrl-x ctrl-+")
 
-    def zoom_out():
+    def zoom_out(self):
         actions.key("ctrl-x ctrl--")
 
-    def zoom_reset():
+    def zoom_reset(self):
         actions.key("ctrl-x ctrl-0")
 
     # Some modes override ctrl-s/r to do something other than isearch-forward, so we
@@ -314,40 +314,40 @@ class EditActions:
         if text:
             actions.insert(text)
 
-    def find_next():
+    def find_next(self):
         actions.key("ctrl-s")
 
-    def find_previous():
+    def find_previous(self):
         actions.key("ctrl-r")
 
 
 @ctx.action_class("app")
 class AppActions:
-    def window_open():
+    def window_open(self):
         actions.user.emacs("make-frame-command")
 
-    def tab_next():
+    def tab_next(self):
         actions.user.emacs("tab-next")
 
-    def tab_previous():
+    def tab_previous(self):
         actions.user.emacs("tab-previous")
 
-    def tab_close():
+    def tab_close(self):
         actions.user.emacs("tab-close")
 
-    def tab_reopen():
+    def tab_reopen(self):
         actions.user.emacs("tab-undo")
 
-    def tab_open():
+    def tab_open(self):
         actions.user.emacs("tab-new")
 
 
 @ctx.action_class("code")
 class CodeActions:
-    def toggle_comment():
+    def toggle_comment(self):
         actions.user.emacs("comment-dwim")
 
-    def language():
+    def language(self):
         # Assumes win.filename() gives buffer name.
         if "*scratch*" == actions.win.filename():
             return "elisp"
@@ -359,5 +359,5 @@ class WinActions:
     # This assumes the title is/contains the filename.
     # To do this, put this in init.el:
     # (setq-default frame-title-format '((:eval (buffer-name (window-buffer (minibuffer-selected-window))))))
-    def filename():
+    def filename(self):
         return actions.win.title()

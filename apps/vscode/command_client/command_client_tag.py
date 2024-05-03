@@ -9,7 +9,7 @@ mod.tag(
 
 @mod.action_class
 class Actions:
-    def command_server_directory() -> str:
+    def command_server_directory(self) -> str:
         """
         The dirctory which contains the files required for communication between
         the application and Talon. This is the only function which absolutely

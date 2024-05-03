@@ -71,18 +71,18 @@ ctx.lists["self.file_manager_files"] = []
 
 @mod.action_class
 class Actions:
-    def file_manager_current_path() -> str:
+    def file_manager_current_path(self) -> str:
         """Returns the current path for the active file manager."""
         return ""
 
-    def file_manager_open_parent():
+    def file_manager_open_parent(self):
         """file_manager_open_parent"""
         return
 
-    def file_manager_go_forward():
+    def file_manager_go_forward(self):
         """file_manager_go_forward_directory"""
 
-    def file_manager_go_back():
+    def file_manager_go_back(self):
         """file_manager_go_forward_directory"""
 
     def file_manager_open_volume(volume: str):
@@ -97,10 +97,10 @@ class Actions:
     def file_manager_new_folder(name: str):
         """Creates a new folder in a gui filemanager or inserts the command to do so for terminals"""
 
-    def file_manager_show_properties():
+    def file_manager_show_properties(self):
         """Shows the properties for the file"""
 
-    def file_manager_terminal_here():
+    def file_manager_terminal_here(self):
         """Opens terminal at current location"""
 
     def file_manager_open_file(path: str):
@@ -109,15 +109,15 @@ class Actions:
     def file_manager_select_file(path: str):
         """selects the file"""
 
-    def file_manager_refresh_title():
+    def file_manager_refresh_title(self):
         """Refreshes the title to match current directory. this is for e.g. windows command prompt that will need to do some magic."""
         return
 
-    def file_manager_update_lists():
+    def file_manager_update_lists(self):
         """Forces an update of the lists (e.g., when file or folder created)"""
         update_lists()
 
-    def file_manager_toggle_pickers():
+    def file_manager_toggle_pickers(self):
         """Shows the pickers"""
         if gui_files.showing:
             gui_files.hide()
@@ -126,7 +126,7 @@ class Actions:
             gui_files.show()
             gui_folders.show()
 
-    def file_manager_hide_pickers():
+    def file_manager_hide_pickers(self):
         """Hides the pickers"""
         if gui_files.showing:
             gui_files.hide()
@@ -148,7 +148,7 @@ class Actions:
         assert index < len(file_selections)
         return file_selections[index]
 
-    def file_manager_next_file_page():
+    def file_manager_next_file_page(self):
         """next_file_page"""
         global current_file_page
         if gui_files.showing:
@@ -158,7 +158,7 @@ class Actions:
                 current_file_page = 1
             gui_files.show()
 
-    def file_manager_previous_file_page():
+    def file_manager_previous_file_page(self):
         """previous_file_page"""
         global current_file_page
         if gui_files.showing:
@@ -169,7 +169,7 @@ class Actions:
 
             gui_files.show()
 
-    def file_manager_next_folder_page():
+    def file_manager_next_folder_page(self):
         """next_folder_page"""
         global current_folder_page
         if gui_folders.showing:
@@ -180,7 +180,7 @@ class Actions:
 
             gui_folders.show()
 
-    def file_manager_previous_folder_page():
+    def file_manager_previous_folder_page(self):
         """previous_folder_page"""
         global current_folder_page
         if gui_folders.showing:

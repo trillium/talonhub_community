@@ -22,34 +22,34 @@ ctx.tags = ["user.find_and_replace", "user.line_commands", "user.tabs"]
 
 @ctx.action_class("app")
 class AppActions:
-    def tab_previous():
+    def tab_previous(self):
         actions.key("ctrl-pageup")
 
-    def tab_next():
+    def tab_next(self):
         actions.key("ctrl-pagedown")
 
 
 @ctx.action_class("code")
 class CodeActions:
-    def toggle_comment():
+    def toggle_comment(self):
         actions.key("ctrl-q")
 
 
 @ctx.action_class("edit")
 class EditActions:
-    def line_clone():
+    def line_clone(self):
         actions.key("ctrl-d")
 
-    def line_swap_up():
+    def line_swap_up(self):
         actions.key("ctrl-shift-up")
 
-    def line_swap_down():
+    def line_swap_down(self):
         actions.key("ctrl-shift-down")
 
-    def indent_more():
+    def indent_more(self):
         actions.key("tab")
 
-    def indent_less():
+    def indent_less(self):
         actions.key("shift-tab")
 
     def jump_line(n: int):
@@ -64,7 +64,7 @@ class EditActions:
 
 @ctx.action_class("win")
 class win_actions:
-    def filename():
+    def filename(self):
         title = actions.win.title()
         result = title.split(" - ")[0]
         if "." in result:
@@ -91,7 +91,7 @@ class UserActions:
         if number < 10:
             actions.key(f"ctrl-keypad_{number}")
 
-    def tab_final():
+    def tab_final(self):
         """Jumps to the final tab"""
         print("Notepad doesn't support this...")
         # actions.key("ctrl-numpad_0")
@@ -105,10 +105,10 @@ class UserActions:
         if text:
             actions.insert(text)
 
-    def find_next():
+    def find_next(self):
         actions.key("enter")
 
-    def find_previous():
+    def find_previous(self):
         actions.key("shift-enter")
 
     def find_everywhere(text: str):
@@ -119,15 +119,15 @@ class UserActions:
         if text:
             actions.insert(text)
 
-    def find_toggle_match_by_case():
+    def find_toggle_match_by_case(self):
         """Toggles find match by case sensitivity"""
         actions.key("alt-c")
 
-    def find_toggle_match_by_word():
+    def find_toggle_match_by_word(self):
         """Toggles find match by whole words"""
         actions.key("alt-w")
 
-    def find_toggle_match_by_regex():
+    def find_toggle_match_by_regex(self):
         """Toggles find match by regex"""
         actions.key("alt-g")
 
@@ -145,11 +145,11 @@ class UserActions:
         if text:
             actions.insert(text)
 
-    def replace_confirm():
+    def replace_confirm(self):
         """Confirm replace at current position"""
         actions.key("alt-r")
 
-    def replace_confirm_all():
+    def replace_confirm_all(self):
         """Confirm replace all"""
         actions.key("alt-a")
 

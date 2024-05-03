@@ -13,16 +13,16 @@ directories_to_exclude = {}
 
 @ctx.action_class("user")
 class UserActions:
-    def file_manager_open_parent():
+    def file_manager_open_parent(self):
         actions.key("cmd-up")
 
-    def file_manager_go_forward():
+    def file_manager_go_forward(self):
         actions.key("cmd-]")
 
-    def file_manager_go_back():
+    def file_manager_go_back(self):
         actions.key("cmd-[")
 
-    def file_manager_current_path():
+    def file_manager_current_path(self):
         title = ui.active_window().title
 
         if "~" in title:
@@ -36,7 +36,7 @@ class UserActions:
 
         return title
 
-    def file_manager_terminal_here():
+    def file_manager_terminal_here(self):
         applescript.run(
             r"""
         tell application "Finder"
@@ -51,7 +51,7 @@ class UserActions:
         end tell"""
         )
 
-    def file_manager_show_properties():
+    def file_manager_show_properties(self):
         """Shows the properties for the file"""
         actions.key("cmd-i")
 

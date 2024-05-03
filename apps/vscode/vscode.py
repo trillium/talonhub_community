@@ -58,45 +58,45 @@ app: vscode
 @ctx.action_class("app")
 class AppActions:
     # talon app actions
-    def tab_open():
+    def tab_open(self):
         actions.user.vscode("workbench.action.files.newUntitledFile")
 
-    def tab_close():
+    def tab_close(self):
         actions.user.vscode("workbench.action.closeActiveEditor")
 
-    def tab_next():
+    def tab_next(self):
         actions.user.vscode("workbench.action.nextEditorInGroup")
 
-    def tab_previous():
+    def tab_previous(self):
         actions.user.vscode("workbench.action.previousEditorInGroup")
 
-    def tab_reopen():
+    def tab_reopen(self):
         actions.user.vscode("workbench.action.reopenClosedEditor")
 
-    def window_close():
+    def window_close(self):
         actions.user.vscode("workbench.action.closeWindow")
 
-    def window_open():
+    def window_open(self):
         actions.user.vscode("workbench.action.newWindow")
 
 
 @ctx.action_class("code")
 class CodeActions:
     # talon code actions
-    def toggle_comment():
+    def toggle_comment(self):
         actions.user.vscode("editor.action.commentLine")
 
 
 @ctx.action_class("edit")
 class EditActions:
     # talon edit actions
-    def indent_more():
+    def indent_more(self):
         actions.user.vscode("editor.action.indentLines")
 
-    def indent_less():
+    def indent_less(self):
         actions.user.vscode("editor.action.outdentLines")
 
-    def save_all():
+    def save_all(self):
         actions.user.vscode("workbench.action.files.saveAll")
 
     def find(text=None):
@@ -107,19 +107,19 @@ class EditActions:
         if text is not None:
             actions.insert(text)
 
-    def line_swap_up():
+    def line_swap_up(self):
         actions.key("alt-up")
 
-    def line_swap_down():
+    def line_swap_down(self):
         actions.key("alt-down")
 
-    def line_clone():
+    def line_clone(self):
         actions.key("shift-alt-down")
 
-    def line_insert_down():
+    def line_insert_down(self):
         actions.user.vscode("editor.action.insertLineAfter")
 
-    def line_insert_up():
+    def line_insert_up(self):
         actions.user.vscode("editor.action.insertLineBefore")
 
     def jump_line(n: int):
@@ -131,7 +131,7 @@ class EditActions:
 
 @ctx.action_class("win")
 class WinActions:
-    def filename():
+    def filename(self):
         title = actions.win.title()
         # this doesn't seem to be necessary on VSCode for Mac
         # if title == "":
@@ -154,91 +154,91 @@ class Actions:
         """Activate a terminal by number"""
         actions.user.vscode(f"workbench.action.terminal.focusAtIndex{number}")
 
-    def command_palette():
+    def command_palette(self):
         """Show command palette"""
         actions.key("ctrl-shift-p")
 
 
 @mac_ctx.action_class("user")
 class MacUserActions:
-    def command_palette():
+    def command_palette(self):
         actions.key("cmd-shift-p")
 
 
 @ctx.action_class("user")
 class UserActions:
     # splits.py support begin
-    def split_clear_all():
+    def split_clear_all(self):
         actions.user.vscode("workbench.action.editorLayoutSingle")
 
-    def split_clear():
+    def split_clear(self):
         actions.user.vscode("workbench.action.joinTwoGroups")
 
-    def split_flip():
+    def split_flip(self):
         actions.user.vscode("workbench.action.toggleEditorGroupLayout")
 
-    def split_maximize():
+    def split_maximize(self):
         actions.user.vscode("workbench.action.maximizeEditor")
 
-    def split_reset():
+    def split_reset(self):
         actions.user.vscode("workbench.action.evenEditorWidths")
 
-    def split_last():
+    def split_last(self):
         actions.user.vscode("workbench.action.focusLeftGroup")
 
-    def split_next():
+    def split_next(self):
         actions.user.vscode_and_wait("workbench.action.focusRightGroup")
 
-    def split_window_down():
+    def split_window_down(self):
         actions.user.vscode("workbench.action.moveEditorToBelowGroup")
 
-    def split_window_horizontally():
+    def split_window_horizontally(self):
         actions.user.vscode("workbench.action.splitEditorOrthogonal")
 
-    def split_window_left():
+    def split_window_left(self):
         actions.user.vscode("workbench.action.moveEditorToLeftGroup")
 
-    def split_window_right():
+    def split_window_right(self):
         actions.user.vscode("workbench.action.moveEditorToRightGroup")
 
-    def split_window_up():
+    def split_window_up(self):
         actions.user.vscode("workbench.action.moveEditorToAboveGroup")
 
-    def split_window_vertically():
+    def split_window_vertically(self):
         actions.user.vscode("workbench.action.splitEditor")
 
-    def split_window():
+    def split_window(self):
         actions.user.vscode("workbench.action.splitEditor")
 
     # splits.py support end
 
     # multiple_cursor.py support begin
     # note: vscode has no explicit mode for multiple cursors
-    def multi_cursor_add_above():
+    def multi_cursor_add_above(self):
         actions.user.vscode("editor.action.insertCursorAbove")
 
-    def multi_cursor_add_below():
+    def multi_cursor_add_below(self):
         actions.user.vscode("editor.action.insertCursorBelow")
 
-    def multi_cursor_add_to_line_ends():
+    def multi_cursor_add_to_line_ends(self):
         actions.user.vscode("editor.action.insertCursorAtEndOfEachLineSelected")
 
-    def multi_cursor_disable():
+    def multi_cursor_disable(self):
         actions.key("escape")
 
-    def multi_cursor_enable():
+    def multi_cursor_enable(self):
         actions.skip()
 
-    def multi_cursor_select_all_occurrences():
+    def multi_cursor_select_all_occurrences(self):
         actions.user.vscode("editor.action.selectHighlights")
 
-    def multi_cursor_select_fewer_occurrences():
+    def multi_cursor_select_fewer_occurrences(self):
         actions.user.vscode("cursorUndo")
 
-    def multi_cursor_select_more_occurrences():
+    def multi_cursor_select_more_occurrences(self):
         actions.user.vscode("editor.action.addSelectionToNextFindMatch")
 
-    def multi_cursor_skip_occurrence():
+    def multi_cursor_skip_occurrence(self):
         actions.user.vscode("editor.action.moveSelectionToNextFindMatch")
 
     def tab_jump(number: int):
@@ -254,7 +254,7 @@ class UserActions:
                 "workbench.action.openEditorAtIndex", number
             )
 
-    def tab_final():
+    def tab_final(self):
         if is_mac:
             actions.user.vscode("workbench.action.lastEditorInGroup")
         else:
@@ -283,10 +283,10 @@ class UserActions:
         if text:
             actions.insert(text)
 
-    def find_next():
+    def find_next(self):
         actions.user.vscode("editor.action.nextMatchFindAction")
 
-    def find_previous():
+    def find_previous(self):
         actions.user.vscode("editor.action.previousMatchFindAction")
 
     def find_everywhere(text: str):
@@ -299,21 +299,21 @@ class UserActions:
         if text:
             actions.insert(text)
 
-    def find_toggle_match_by_case():
+    def find_toggle_match_by_case(self):
         """Toggles find match by case sensitivity"""
         if is_mac:
             actions.key("alt-cmd-c")
         else:
             actions.key("alt-c")
 
-    def find_toggle_match_by_word():
+    def find_toggle_match_by_word(self):
         """Toggles find match by whole words"""
         if is_mac:
             actions.key("cmd-alt-w")
         else:
             actions.key("alt-w")
 
-    def find_toggle_match_by_regex():
+    def find_toggle_match_by_regex(self):
         """Toggles find match by regex"""
         if is_mac:
             actions.key("cmd-alt-r")
@@ -340,14 +340,14 @@ class UserActions:
         if text:
             actions.insert(text)
 
-    def replace_confirm():
+    def replace_confirm(self):
         """Confirm replace at current position"""
         if is_mac:
             actions.key("shift-cmd-1")
         else:
             actions.key("ctrl-shift-1")
 
-    def replace_confirm_all():
+    def replace_confirm_all(self):
         """Confirm replace all"""
         if is_mac:
             actions.key("cmd-enter")

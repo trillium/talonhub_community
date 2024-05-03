@@ -107,37 +107,37 @@ ctx.lists["user.code_common_function"] = {
 
 @ctx.action_class("user")
 class UserActions:
-    def code_operator_addition():
+    def code_operator_addition(self):
         actions.insert(" + ")
 
-    def code_operator_subtraction():
+    def code_operator_subtraction(self):
         actions.insert(" - ")
 
-    def code_operator_multiplication():
+    def code_operator_multiplication(self):
         actions.insert(" * ")
 
-    def code_operator_division():
+    def code_operator_division(self):
         actions.insert(" / ")
 
-    def code_operator_and():
+    def code_operator_and(self):
         actions.insert(" and ")
 
-    def code_operator_or():
+    def code_operator_or(self):
         actions.insert(" or ")
 
-    def code_operator_greater_than():
+    def code_operator_greater_than(self):
         actions.insert(" > ")
 
-    def code_operator_greater_than_or_equal_to():
+    def code_operator_greater_than_or_equal_to(self):
         actions.insert(" >= ")
 
-    def code_operator_less_than():
+    def code_operator_less_than(self):
         actions.insert(" < ")
 
-    def code_operator_less_than_or_equal_to():
+    def code_operator_less_than_or_equal_to(self):
         actions.insert(" <= ")
 
-    def code_import():
+    def code_import(self):
         actions.insert("@import ")
 
     def code_insert_function(text: str, selection: str):

@@ -173,90 +173,90 @@ app: jetbrains
 
 @ctx.action_class("app")
 class AppActions:
-    def tab_next():
+    def tab_next(self):
         actions.user.idea("action NextTab")
 
-    def tab_previous():
+    def tab_previous(self):
         actions.user.idea("action PreviousTab")
 
-    def tab_close():
+    def tab_close(self):
         actions.user.idea("action CloseContent")
 
-    def tab_reopen():
+    def tab_reopen(self):
         actions.user.idea("action ReopenClosedTab")
 
 
 @ctx.action_class("code")
 class CodeActions:
     # talon code actions
-    def toggle_comment():
+    def toggle_comment(self):
         actions.user.idea("action CommentByLineComment")
 
 
 @ctx.action_class("edit")
 class EditActions:
     # talon edit actions
-    def copy():
+    def copy(self):
         actions.user.idea("action EditorCopy")
 
-    def cut():
+    def cut(self):
         actions.user.idea("action EditorCut")
 
-    def delete():
+    def delete(self):
         actions.user.idea("action EditorBackSpace")
 
-    def paste():
+    def paste(self):
         actions.user.idea("action EditorPaste")
 
-    def find_next():
+    def find_next(self):
         actions.user.idea("action FindNext")
 
-    def find_previous():
+    def find_previous(self):
         actions.user.idea("action FindPrevious")
 
     def find(text: str = None):
         actions.user.idea("action Find")
 
-    def line_clone():
+    def line_clone(self):
         actions.user.idea("action EditorDuplicate")
 
-    def line_swap_down():
+    def line_swap_down(self):
         actions.user.idea("action MoveLineDown")
 
-    def line_swap_up():
+    def line_swap_up(self):
         actions.user.idea("action MoveLineUp")
 
-    def indent_more():
+    def indent_more(self):
         actions.user.idea("action EditorIndentLineOrSelection")
 
-    def indent_less():
+    def indent_less(self):
         actions.user.idea("action EditorUnindentSelection")
 
     def select_line(n: int = None):
         actions.user.idea("action EditorSelectLine")
 
-    def select_word():
+    def select_word(self):
         actions.user.idea("action EditorSelectWord")
 
-    def select_all():
+    def select_all(self):
         actions.user.idea("action $SelectAll")
 
-    def file_start():
+    def file_start(self):
         actions.user.idea("action EditorTextStart")
 
-    def file_end():
+    def file_end(self):
         actions.user.idea("action EditorTextEnd")
 
-    def extend_file_start():
+    def extend_file_start(self):
         actions.user.idea("action EditorTextStartWithSelection")
 
-    def extend_file_end():
+    def extend_file_end(self):
         actions.user.idea("action EditorTextEndWithSelection")
 
-    def extend_word_left():
+    def extend_word_left(self):
         actions.user.idea("action EditorPreviousWordWithSelection")
 
-    def extend_word_right():
+    def extend_word_right(self):
         actions.user.idea("action EditorNextWordWithSelection")
 
     def jump_line(n: int):
@@ -268,7 +268,7 @@ class EditActions:
 
 @ctx.action_class("win")
 class WinActions:
-    def filename() -> str:
+    def filename(self) -> str:
         title: str = actions.win.title()
         result = title.split()
 
@@ -300,45 +300,45 @@ class UserActions:
         else:
             actions.user.idea(f"range {line_start} {line_end}")
 
-    def extend_camel_left():
+    def extend_camel_left(self):
         actions.user.idea("action EditorPreviousWordInDifferentHumpsModeWithSelection")
 
-    def extend_camel_right():
+    def extend_camel_right(self):
         actions.user.idea("action EditorNextWordInDifferentHumpsModeWithSelection")
 
-    def camel_left():
+    def camel_left(self):
         actions.user.idea("action EditorPreviousWordInDifferentHumpsMode")
 
-    def camel_right():
+    def camel_right(self):
         actions.user.idea("action EditorNextWordInDifferentHumpsMode")
 
     def line_clone(line: int):
         actions.user.idea(f"clone {line}")
 
     # multi-cursor tag functions
-    def multi_cursor_enable():
+    def multi_cursor_enable(self):
         actions.skip()
 
-    def multi_cursor_disable():
+    def multi_cursor_disable(self):
         actions.key("escape")
 
-    def multi_cursor_add_above():
+    def multi_cursor_add_above(self):
         actions.user.idea("action EditorCloneCaretAbove")
 
-    def multi_cursor_add_below():
+    def multi_cursor_add_below(self):
         actions.user.idea("action EditorCloneCaretBelow")
 
-    def multi_cursor_select_fewer_occurrences():
+    def multi_cursor_select_fewer_occurrences(self):
         actions.user.idea("action UnselectPreviousOccurrence")
 
-    def multi_cursor_select_more_occurrences():
+    def multi_cursor_select_more_occurrences(self):
         actions.user.idea("action SelectNextOccurrence")
 
     # def multi_cursor_skip_occurrence():
-    def multi_cursor_select_all_occurrences():
+    def multi_cursor_select_all_occurrences(self):
         actions.user.idea("action SelectAllOccurrences")
 
-    def multi_cursor_add_to_line_ends():
+    def multi_cursor_add_to_line_ends(self):
         actions.user.idea("action EditorAddCaretPerSelectedLine")
 
     # splits tag functions
@@ -347,29 +347,29 @@ class UserActions:
     # def split_window_left():
     # def split_window_down():
     # def split_window_up():
-    def split_window_vertically():
+    def split_window_vertically(self):
         actions.user.idea("action SplitVertically")
 
-    def split_window_horizontally():
+    def split_window_horizontally(self):
         actions.user.idea("action SplitHorizontally")
 
-    def split_flip():
+    def split_flip(self):
         actions.user.idea("action ChangeSplitOrientation")
 
-    def split_maximize():
+    def split_maximize(self):
         actions.key("ctrl-shift-f12")
 
-    def split_reset():
+    def split_reset(self):
         actions.key("shift-f12")
 
     # def split_window():
-    def split_clear():
+    def split_clear(self):
         actions.user.idea("action Unsplit")
 
-    def split_clear_all():
+    def split_clear_all(self):
         actions.user.idea("action UnsplitAll")
 
-    def split_next():
+    def split_next(self):
         actions.user.idea("action NextSplitter")
 
     # def split_last():

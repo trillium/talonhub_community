@@ -14,13 +14,13 @@ directories_to_exclude = {}
 
 @ctx.action_class("edit")
 class EditActions:
-    def delete_line():
+    def delete_line(self):
         actions.key("esc")
 
 
 @ctx.action_class("user")
 class UserActions:
-    def file_manager_refresh_title():
+    def file_manager_refresh_title(self):
         actions.insert(
             "$Host.UI.RawUI.WindowTitle = 'Windows PowerShell: ' +  $(get-location)"
         )
@@ -30,12 +30,12 @@ class UserActions:
         # action(user.file_manager_go_forward):
         #    key("alt-right")
 
-    def file_manager_open_parent():
+    def file_manager_open_parent(self):
         actions.insert("cd ..")
         actions.key("enter")
         actions.user.file_manager_refresh_title()
 
-    def file_manager_current_path():
+    def file_manager_current_path(self):
         path = ui.active_window().title
         path = path.replace("Administrator:  ", "").replace("Windows PowerShell: ", "")
 

@@ -19,40 +19,40 @@ class user_actions:
 @ctx.action_class("app")
 class app_actions:
     # tabs-tag functions implementations
-    def tab_open():
+    def tab_open(self):
         actions.key("ctrl-shift-t")
 
-    def tab_previous():
+    def tab_previous(self):
         actions.key("shift-left")
 
-    def tab_next():
+    def tab_next(self):
         actions.key("shift-right")
 
-    def tab_close():
+    def tab_close(self):
         actions.key("ctrl-shift-w")
 
-    def tab_reopen():
+    def tab_reopen(self):
         # TODO: decide whether this notification is good style
         # (if this function wouldn't be defined here a wrong default would be activated)
         actions.app.notify("tab reopen is not possible in kde konsole")
 
-    def window_open():
+    def window_open(self):
         actions.key("ctrl-shift-n")
 
 
 # this overwrites the unfitting parts of linux/edit.py
 @ctx.action_class("edit")
 class EditActions:
-    def page_down():
+    def page_down(self):
         actions.key("shift-pagedown")
 
-    def page_up():
+    def page_up(self):
         actions.key("shift-pageup")
 
-    def paste():
+    def paste(self):
         actions.key("ctrl-shift-v")
 
-    def copy():
+    def copy(self):
         actions.key("ctrl-shift-c")
 
     def find(text: str):

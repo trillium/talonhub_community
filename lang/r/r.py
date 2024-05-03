@@ -242,96 +242,96 @@ ctx.lists["user.code_parameter_name"] = {
 
 @ctx.action_class("user")
 class UserActions:
-    def code_operator_assignment():
+    def code_operator_assignment(self):
         actions.auto_insert(" <- ")
 
-    def code_operator_subtraction():
+    def code_operator_subtraction(self):
         actions.auto_insert(" - ")
 
-    def code_operator_addition():
+    def code_operator_addition(self):
         actions.auto_insert(" + ")
 
-    def code_operator_multiplication():
+    def code_operator_multiplication(self):
         actions.auto_insert(" * ")
 
-    def code_operator_exponent():
+    def code_operator_exponent(self):
         actions.auto_insert(" ** ")
 
-    def code_operator_division():
+    def code_operator_division(self):
         actions.auto_insert(" / ")
 
-    def code_operator_modulo():
+    def code_operator_modulo(self):
         actions.auto_insert(" %% ")
 
-    def code_operator_equal():
+    def code_operator_equal(self):
         actions.auto_insert(" == ")
 
-    def code_operator_not_equal():
+    def code_operator_not_equal(self):
         actions.auto_insert(" != ")
 
-    def code_operator_greater_than():
+    def code_operator_greater_than(self):
         actions.auto_insert(" > ")
 
-    def code_operator_greater_than_or_equal_to():
+    def code_operator_greater_than_or_equal_to(self):
         actions.auto_insert(" >= ")
 
-    def code_operator_less_than():
+    def code_operator_less_than(self):
         actions.auto_insert(" < ")
 
-    def code_operator_less_than_or_equal_to():
+    def code_operator_less_than_or_equal_to(self):
         actions.auto_insert(" <= ")
 
-    def code_operator_and():
+    def code_operator_and(self):
         actions.auto_insert(" & ")
 
-    def code_operator_or():
+    def code_operator_or(self):
         actions.auto_insert(" | ")
 
-    def code_operator_bitwise_and():
+    def code_operator_bitwise_and(self):
         actions.auto_insert(" & ")
 
-    def code_insert_null():
+    def code_insert_null(self):
         actions.auto_insert("NULL")
 
-    def code_state_if():
+    def code_state_if(self):
         actions.insert("if () {}")
         actions.key("left enter up end left:3")
 
-    def code_state_else_if():
+    def code_state_else_if(self):
         actions.insert(" else if () {}")
         actions.key("left enter up end left:3")
 
-    def code_state_else():
+    def code_state_else(self):
         actions.insert(" else {}")
         actions.key("left enter")
 
-    def code_state_for():
+    def code_state_for(self):
         actions.insert("for ( in ) {}")
         actions.key("left enter up end left:7")
 
-    def code_state_while():
+    def code_state_while(self):
         actions.insert("while () {}")
         actions.key("left enter up end left:3")
 
-    def code_import():
+    def code_import(self):
         actions.user.insert_between("library(", ")")
 
-    def code_comment_line_prefix():
+    def code_comment_line_prefix(self):
         actions.auto_insert("#")
 
-    def code_state_return():
+    def code_state_return(self):
         actions.user.insert_between("return(", ")")
 
-    def code_break():
+    def code_break(self):
         actions.auto_insert("break")
 
-    def code_next():
+    def code_next(self):
         actions.auto_insert("next")
 
-    def code_insert_true():
+    def code_insert_true(self):
         actions.auto_insert("TRUE")
 
-    def code_insert_false():
+    def code_insert_false(self):
         actions.auto_insert("FALSE")
 
     def code_insert_function(text: str, selection: str):

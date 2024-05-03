@@ -12,7 +12,7 @@ app: thunderbird
 @ctx.action_class("app")
 class AppActions:
     # app.tabs
-    def tab_reopen():
+    def tab_reopen(self):
         actions.key("ctrl-shift-t")  # only works from inbox tab
 
 
@@ -23,7 +23,7 @@ class UserActions:
         if number <= 9:
             actions.key(f"alt-{number}")
 
-    def tab_final():
+    def tab_final(self):
         actions.key("alt-9")
 
     # custom actions

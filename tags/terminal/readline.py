@@ -8,23 +8,23 @@ tag: user.readline
 
 @ctx.action_class("edit")
 class EditActions:
-    def delete_line():
+    def delete_line(self):
         actions.edit.line_end()
         actions.key("ctrl-u")
 
-    def word_left():
+    def word_left(self):
         actions.key("alt-b")
 
-    def word_right():
+    def word_right(self):
         actions.key("alt-f")
 
-    def line_end():
+    def line_end(self):
         actions.key("ctrl-e")
 
-    def line_start():
+    def line_start(self):
         actions.key("ctrl-a")
 
-    def undo():
+    def undo(self):
         actions.key("ctrl-_")
 
     # TODO: we don't want to overwrite the system's paste action, should this be a separate command?
@@ -34,21 +34,21 @@ class EditActions:
 
 @ctx.action_class("user")
 class Actions:
-    def cut_line():
+    def cut_line(self):
         actions.edit.line_start()
         actions.key("ctrl-k")
 
-    def cut_word_left():
+    def cut_word_left(self):
         actions.key("ctrl-w")
 
-    def cut_word_right():
+    def cut_word_right(self):
         actions.key("alt-d")
 
-    def copy_word_left():
+    def copy_word_left(self):
         actions.user.cut_word_left()
         actions.key("ctrl-y")
 
-    def copy_word_right():
+    def copy_word_right(self):
         # TODO: how put cursor back at starting position?
         actions.user.cut_word_right()
         actions.key("ctrl-y")

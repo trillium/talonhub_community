@@ -22,18 +22,18 @@ app: calibre_viewer
 @ctx.action_class("user")
 class UserActions:
     # user.pages
-    def page_next():
+    def page_next(self):
         actions.key("pagedown")
 
-    def page_previous():
+    def page_previous(self):
         actions.key("pageup")
 
-    def page_final():
+    def page_final(self):
         actions.key("ctrl-end")
 
     # user.chapters
-    def chapter_next():
+    def chapter_next(self):
         actions.key("ctrl-pagedown")
 
-    def chapter_previous():
+    def chapter_previous(self):
         actions.key("ctrl-pageup")

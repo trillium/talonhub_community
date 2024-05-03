@@ -16,38 +16,38 @@ mode: dictation
 
 @ctx.action_class("user")
 class UserActions:
-    def noise_pop():
+    def noise_pop(self):
         actions.user.hud_add_log("event", "pop")
         
-    def noise_ssss():
+    def noise_ssss(self):
         actions.user.hud_add_log("event", "ssss")
 
-    def noise_cluck():
+    def noise_cluck(self):
         if not last_command_is_sleep():
             actions.core.repeat_phrase()
             actions.user.hud_add_log("event", "alviolar-click")
     
-    def noise_lateral_click():
+    def noise_lateral_click(self):
         # actions.user.cancel_in_flight_phrase
         actions.user.hud_add_log("event", "lateral-click")
 
-    def noise_shush_start():
+    def noise_shush_start(self):
         actions.user.hud_add_log("event", "shush")
         global shush_start
         shush_start = time.perf_counter()
         actions.user.mouse_scroll_up()
 
-    def noise_shush_stop():
+    def noise_shush_stop(self):
         actions.user.abort_specific_phrases(
             ["hash", "ssh"], shush_start, time.perf_counter()
         )
         actions.user.mouse_scroll_stop()
 
-    def noise_hiss_start():
+    def noise_hiss_start(self):
         actions.user.hud_add_log("event", "hiss")
         actions.user.mouse_scroll_down
 
-    def noise_hiss_stop():
+    def noise_hiss_stop(self):
         actions.user.mouse_scroll_stop()
 
 
@@ -62,30 +62,30 @@ class Actions:
             cron.cancel(cron_jobs[name])
             state.pop(name)
 
-    def noise_pop():
+    def noise_pop(self):
         """Noise pop"""
 
-    def noise_ssss():
+    def noise_ssss(self):
         """Noise ssss"""
         actions.user.hud_add_log("event", "ssss")
 
 
-    def noise_cluck():
+    def noise_cluck(self):
         """Noise cluck"""
 
-    def noise_lateral_click():
+    def noise_lateral_click(self):
         """Noise lateral click"""
 
-    def noise_shush_start():
+    def noise_shush_start(self):
         """Noise shush started"""
 
-    def noise_shush_stop():
+    def noise_shush_stop(self):
         """Noise shush stopped"""
 
-    def noise_hiss_start():
+    def noise_hiss_start(self):
         """Noise hiss started"""
 
-    def noise_hiss_stop():
+    def noise_hiss_stop(self):
         """Noise hiss stopped"""
 
 

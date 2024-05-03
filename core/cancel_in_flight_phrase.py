@@ -6,13 +6,13 @@ mod = Module()
 
 @mod.action_class
 class Actions:
-    def cancel_in_flight_phrase():
+    def cancel_in_flight_phrase(self):
         """Cancels phrase currently being spoken"""
         active_microphone = actions.sound.active_microphone()
         actions.sound.set_microphone("None")
         actions.sound.set_microphone(active_microphone)
 
-    def cancel_in_flight_phrase_loud():
+    def cancel_in_flight_phrase_loud(self):
         """Cancels phrase currently being spoken"""
         actions.user.cancel_in_flight_phrase()
         app.notify("Cancelled phrase")

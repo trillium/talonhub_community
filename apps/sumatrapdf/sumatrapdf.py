@@ -20,32 +20,32 @@ app: sumatrapdf
 @ctx.action_class("app")
 class app_actions:
     # app.tabs
-    def tab_open():
+    def tab_open(self):
         actions.key("ctrl-o")
 
 
 @ctx.action_class("edit")
 class EditActions:
-    def zoom_in():
+    def zoom_in(self):
         actions.key("+")
 
-    def zoom_out():
+    def zoom_out(self):
         actions.key("-")
 
 
 @ctx.action_class("user")
 class UserActions:
     # user.pages
-    def page_current():
+    def page_current(self):
         actions.key("ctrl-g")
         page = actions.edit.selected_text()
         actions.key("escape")
         return int(page)
 
-    def page_next():
+    def page_next(self):
         actions.key("n")
 
-    def page_previous():
+    def page_previous(self):
         actions.key("p")
 
     def page_jump(number: int):
@@ -53,7 +53,7 @@ class UserActions:
         actions.insert(str(number))
         actions.key("enter")
 
-    def page_final():
+    def page_final(self):
         actions.key("end")
 
     # user.tabs
@@ -61,5 +61,5 @@ class UserActions:
         if number < 9:
             actions.key(f"alt-{number}")
 
-    def tab_final():
+    def tab_final(self):
         actions.key("alt-9")

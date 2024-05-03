@@ -27,7 +27,7 @@ tag: user.i3wm
 
 @ctx.action_class("app")
 class AppActions:
-    def window_close():
+    def window_close(self):
         subprocess.check_call(("i3-msg", "kill"))
 
 
@@ -37,11 +37,11 @@ class Actions:
         """Switch i3 mode"""
         subprocess.check_call(("i3-msg", "mode", name))
 
-    def i3wm_reload():
+    def i3wm_reload(self):
         """Reload the i3 config"""
         subprocess.check_call(("i3-msg", "reload"))
 
-    def i3wm_restart():
+    def i3wm_restart(self):
         """Restart the window manager"""
         subprocess.check_call(("i3-msg", "restart"))
 
@@ -52,7 +52,7 @@ class Actions:
         else:
             subprocess.check_call(("i3-msg", "layout", layout))
 
-    def i3wm_fullscreen():
+    def i3wm_fullscreen(self):
         """Fullscreen the current container"""
         subprocess.check_call(("i3-msg", "fullscreen"))
 
@@ -60,16 +60,16 @@ class Actions:
         """Split the focused container"""
         subprocess.check_call(("i3-msg", "split", direction))
 
-    def i3wm_float():
+    def i3wm_float(self):
         """Toggle whether the focused container should float."""
         subprocess.check_call(("i3-msg", "floating", "toggle"))
 
-    def i3wm_launch():
+    def i3wm_launch(self):
         """Trigger the i3 launcher: ex rofi"""
         key = settings.get("user.i3_mod_key")
         actions.key(f"{key}-d")
 
-    def i3wm_shell():
+    def i3wm_shell(self):
         """Launch a shell"""
         key = settings.get("user.i3_mod_key")
         actions.key(f"{key}-enter")
@@ -85,7 +85,7 @@ class Actions:
         else:
             subprocess.check_call(("i3-msg", "workspace", which))
 
-    def i3wm_show_scratchpad():
+    def i3wm_show_scratchpad(self):
         """Focus/cycle/hide the scratchpad"""
         subprocess.check_call(("i3-msg", "scratchpad", "show"))
 
@@ -112,7 +112,7 @@ class Actions:
         """Move the focused container to the specified position."""
         subprocess.check_call(("i3-msg", "move", "position", where))
 
-    def i3wm_lock():
+    def i3wm_lock(self):
         """Trigger the lock screen"""
         key = settings.get("user.i3_mod_key")
         actions.key(f"{key}-shift-x")

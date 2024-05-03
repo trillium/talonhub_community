@@ -26,7 +26,7 @@ def macro_list_gui(gui: imgui.GUI):
 
 @mod.action_class
 class Actions:
-    def macro_record():
+    def macro_record(self):
         """Begin recording a new voice command macro."""
         global macro
         global recording
@@ -34,7 +34,7 @@ class Actions:
         macro = []
         recording = True
 
-    def macro_stop():
+    def macro_stop(self):
         """Stop recording the macro."""
         global recording
         if recording and len(macro) != 0:
@@ -49,11 +49,11 @@ class Actions:
 
         ctx.lists["user.saved_macros"] = macros.keys()
 
-    def macro_list():
+    def macro_list(self):
         """List all saved macros."""
         macro_list_gui.show()
 
-    def macro_list_close():
+    def macro_list_close(self):
         """Closed the saved macros list."""
         macro_list_gui.hide()
 

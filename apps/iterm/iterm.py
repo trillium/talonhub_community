@@ -17,10 +17,10 @@ directories_to_exclude = {}
 
 @ctx.action_class("edit")
 class EditActions:
-    def line_start():
+    def line_start(self):
         actions.key("home")
 
-    def line_end():
+    def line_end(self):
         actions.key("end")
 
 
@@ -73,9 +73,9 @@ class UserActions:
     def tab_jump(number: int):
         actions.key(f"cmd-{number}")
 
-    def tab_final():
+    def tab_final(self):
         actions.key("cmd-9")
 
-    def terminal_clear_screen():
+    def terminal_clear_screen(self):
         """Clear screen"""
         actions.key("ctrl-l")

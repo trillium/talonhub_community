@@ -75,28 +75,28 @@ app.register("ready", on_ready)
 
 @ctx.action_class("user")
 class UserActions:
-    def code_operator_and():
+    def code_operator_and(self):
         actions.auto_insert(" and ")
 
-    def code_operator_or():
+    def code_operator_or(self):
         actions.auto_insert(" or ")
 
-    def code_operator_subtraction():
+    def code_operator_subtraction(self):
         actions.auto_insert(" - ")
 
-    def code_operator_addition():
+    def code_operator_addition(self):
         actions.auto_insert(" + ")
 
-    def code_operator_multiplication():
+    def code_operator_multiplication(self):
         actions.auto_insert(" * ")
 
-    def code_operator_division():
+    def code_operator_division(self):
         actions.auto_insert(" / ")
 
-    def code_operator_assignment():
+    def code_operator_assignment(self):
         actions.auto_insert(" = ")
 
-    def code_comment_line_prefix():
+    def code_comment_line_prefix(self):
         actions.auto_insert("#")
 
     def code_insert_function(text: str, selection: str):

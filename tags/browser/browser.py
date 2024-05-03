@@ -21,7 +21,7 @@ def is_url(url: str) -> bool:
 
 @mod.action_class
 class Actions:
-    def browser_open_address_in_new_tab():
+    def browser_open_address_in_new_tab(self):
         """Open the url in the address bar in a new tab"""
         actions.key("alt-enter")
 
@@ -35,13 +35,13 @@ class UserActions:
             else:
                 actions.key(f"alt-{number}")
 
-    def tab_final():
+    def tab_final(self):
         if app.platform == "windows":
             actions.key("ctrl-9")
         else:
             actions.key("alt-9")
 
-    def tab_duplicate():
+    def tab_duplicate(self):
         actions.browser.focus_address()
         actions.sleep("180ms")
         possibly_edited_url = actions.edit.selected_text()
@@ -60,7 +60,7 @@ class UserActions:
 
 @ctx.action_class("browser")
 class BrowserActions:
-    def address() -> str:
+    def address(self) -> str:
         title: str = actions.win.title()
         if not title:
             return ""
@@ -82,32 +82,32 @@ class BrowserActions:
         # None were valid.
         return ""
 
-    def bookmark():
+    def bookmark(self):
         actions.key("ctrl-d")
 
-    def bookmark_tabs():
+    def bookmark_tabs(self):
         actions.key("ctrl-shift-d")
 
-    def bookmarks():
+    def bookmarks(self):
         actions.key("ctrl-shift-o")
 
-    def bookmarks_bar():
+    def bookmarks_bar(self):
         actions.key("ctrl-shift-b")
 
-    def focus_address():
+    def focus_address(self):
         actions.key("alt-d")
 
-    def focus_page():
+    def focus_page(self):
         actions.browser.focus_address()
         actions.sleep("180ms")
         actions.key("esc:2")
         actions.sleep("180ms")
         actions.key("esc:2")
 
-    def focus_search():
+    def focus_search(self):
         actions.browser.focus_address()
 
-    def go_blank():
+    def go_blank(self):
         actions.key("ctrl-n")
 
     def go(url: str):
@@ -116,35 +116,35 @@ class BrowserActions:
         actions.insert(url)
         actions.key("enter")
 
-    def go_home():
+    def go_home(self):
         actions.key("alt-home")
 
-    def go_back():
+    def go_back(self):
         actions.key("alt-left")
 
-    def go_forward():
+    def go_forward(self):
         actions.key("alt-right")
 
-    def open_private_window():
+    def open_private_window(self):
         actions.key("ctrl-shift-n")
 
-    def reload():
+    def reload(self):
         actions.key("ctrl-r")
 
-    def reload_hard():
+    def reload_hard(self):
         actions.key("ctrl-shift-r")
 
-    def show_downloads():
+    def show_downloads(self):
         actions.key("ctrl-j")
 
-    def show_clear_cache():
+    def show_clear_cache(self):
         actions.key("ctrl-shift-delete")
 
-    def show_history():
+    def show_history(self):
         actions.key("ctrl-h")
 
-    def submit_form():
+    def submit_form(self):
         actions.key("enter")
 
-    def toggle_dev_tools():
+    def toggle_dev_tools(self):
         actions.key("ctrl-shift-i")

@@ -261,7 +261,7 @@ def hide():
 
 @mod.action_class
 class Actions:
-    def gamepad_tester_toggle():
+    def gamepad_tester_toggle(self):
         """Toggle visibility of gamepad tester gui"""
         if not canvas:
             show()

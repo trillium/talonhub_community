@@ -5,10 +5,10 @@ ctx = Context()
 
 @ctx.action_class("app")
 class AppActions:
-    def window_previous():
+    def window_previous(self):
         cycle_windows(ui.active_app(), -1)
 
-    def window_next():
+    def window_next(self):
         cycle_windows(ui.active_app(), 1)
 
 

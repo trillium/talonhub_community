@@ -12,20 +12,20 @@ os: mac
 
 @ctx.action_class("user")
 class UserActions:
-    def password_fill():
+    def password_fill(self):
         actions.key("cmd-\\")
 
-    def password_show():
+    def password_show(self):
         actions.key("cmd-alt-\\")
 
-    def password_new():
+    def password_new(self):
         actions.key("cmd-i")
 
-    def password_duplicate():
+    def password_duplicate(self):
         actions.key("cmd-d")
 
-    def password_edit():
+    def password_edit(self):
         actions.key("cmd-e")
 
-    def password_delete():
+    def password_delete(self):
         actions.key("cmd-backspace")

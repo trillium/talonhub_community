@@ -333,15 +333,15 @@ class Actions:
             return_command_output=True,
         )
 
-    def command_server_directory() -> str:
+    def command_server_directory(self) -> str:
         """Return the directory of the command server"""
 
-    def trigger_command_server_command_execution():
+    def trigger_command_server_command_execution(self):
         """Issue keystroke to trigger command server to execute command that
         was written to the file.  For internal use only"""
         actions.key("ctrl-shift-f17")
 
-    def emit_pre_phrase_signal() -> bool:
+    def emit_pre_phrase_signal(self) -> bool:
         """
         If in an application supporting the command client, returns True
         and touches a file to indicate that a phrase is beginning execution.
@@ -349,7 +349,7 @@ class Actions:
         """
         return False
 
-    def did_emit_pre_phrase_signal() -> bool:
+    def did_emit_pre_phrase_signal(self) -> bool:
         """Indicates whether the pre-phrase signal was emitted at the start of this phrase"""
         # NB: This action is used by cursorless; please don't delete it :)
         return did_emit_pre_phrase_signal
@@ -357,13 +357,13 @@ class Actions:
 
 @mac_ctx.action_class("user")
 class MacUserActions:
-    def trigger_command_server_command_execution():
+    def trigger_command_server_command_execution(self):
         actions.key("cmd-shift-f17")
 
 
 @ctx.action_class("user")
 class UserActions:
-    def emit_pre_phrase_signal():
+    def emit_pre_phrase_signal(self):
         get_signal_path("prePhrase").touch()
         return True
 

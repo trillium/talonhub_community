@@ -60,7 +60,7 @@ def format_value(value):
 
 @mod.action_class
 class Actions:
-    def help_scope_toggle():
+    def help_scope_toggle(self):
         """Toggle help scope gui"""
         if gui.showing:
             ctx.tags = []

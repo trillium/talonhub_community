@@ -23,7 +23,7 @@ mod.tag("code_libraries_gui", desc="Tag for enabling GUI support for common libr
 
 @mod.action_class
 class Actions:
-    def code_toggle_libraries():
+    def code_toggle_libraries(self):
         """GUI: List libraries for active language"""
         global library_list
         if gui_libraries.showing:

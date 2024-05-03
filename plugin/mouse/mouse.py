@@ -109,20 +109,20 @@ def gui_wheel(gui: imgui.GUI):
 
 @mod.action_class
 class Actions:
-    def zoom_close():
+    def zoom_close(self):
         """Closes an in-progress zoom. Talon will move the cursor position but not click."""
         if eye_zoom_mouse.zoom_mouse.state == eye_zoom_mouse.STATE_OVERLAY:
             actions.tracking.zoom_cancel()
 
-    def mouse_show_cursor():
+    def mouse_show_cursor(self):
         """Shows the cursor"""
         show_cursor_helper(True)
 
-    def mouse_hide_cursor():
+    def mouse_hide_cursor(self):
         """Hides the cursor"""
         show_cursor_helper(False)
 
-    def mouse_wake():
+    def mouse_wake(self):
         """Enable control mouse, zoom mouse, and disables cursor"""
         actions.tracking.control_zoom_toggle(True)
 
@@ -137,13 +137,13 @@ class Actions:
         # Start drag
         ctrl.mouse_click(button=button, down=True)
 
-    def mouse_drag_end():
+    def mouse_drag_end(self):
         """Releases any held mouse buttons"""
         buttons_held_down = list(ctrl.mouse_buttons_down())
         for button in buttons_held_down:
             ctrl.mouse_click(button=button, up=True)
 
-    def mouse_sleep():
+    def mouse_sleep(self):
         """Disables control mouse, zoom mouse, and re-enables cursor"""
         actions.tracking.control_zoom_toggle(False)
         actions.tracking.control_toggle(False)
@@ -161,7 +161,7 @@ class Actions:
         """Scrolls down"""
         mouse_scroll(amount * settings.get("user.mouse_wheel_down_amount"))()
 
-    def mouse_scroll_down_continuous():
+    def mouse_scroll_down_continuous(self):
         """Scrolls down continuously"""
         global continuous_scroll_mode
         continuous_scroll_mode = "scroll down continuous"
@@ -177,7 +177,7 @@ class Actions:
         """Scrolls up"""
         mouse_scroll(-amount * settings.get("user.mouse_wheel_down_amount"))()
 
-    def mouse_scroll_up_continuous():
+    def mouse_scroll_up_continuous(self):
         """Scrolls up continuously"""
         global continuous_scroll_mode
         continuous_scroll_mode = "scroll up continuous"
@@ -200,11 +200,11 @@ class Actions:
             0, amount * settings.get("user.mouse_wheel_horizontal_amount")
         )
 
-    def mouse_scroll_stop():
+    def mouse_scroll_stop(self):
         """Stops scrolling"""
         stop_scroll()
 
-    def mouse_gaze_scroll():
+    def mouse_gaze_scroll(self):
         """Starts gaze scroll"""
         global continuous_scroll_mode
         continuous_scroll_mode = "gaze scroll"
@@ -219,22 +219,22 @@ class Actions:
             actions.tracking.control_toggle(True)
             control_mouse_forced = True
 
-    def copy_mouse_position():
+    def copy_mouse_position(self):
         """Copy the current mouse position coordinates"""
         position = ctrl.mouse_pos()
         clip.set_text(repr(position))
 
-    def mouse_move_center_active_window():
+    def mouse_move_center_active_window(self):
         """move the mouse cursor to the center of the currently active window"""
         rect = ui.active_window().rect
         ctrl.mouse_move(rect.left + (rect.width / 2), rect.top + (rect.height / 2))
 
-    def hiss_scroll_up():
+    def hiss_scroll_up(self):
         """Change mouse hiss scroll direction to up"""
         global hiss_scroll_up
         hiss_scroll_up = True
 
-    def hiss_scroll_down():
+    def hiss_scroll_down(self):
         """Change mouse hiss scroll direction to down"""
         global hiss_scroll_up
         hiss_scroll_up = False
@@ -277,7 +277,7 @@ def show_cursor_helper(show):
 
 @ctx.action_class("user")
 class UserActions:
-    def noise_trigger_pop():
+    def noise_trigger_pop(self):
         if settings.get("user.mouse_enable_pop_stops_scroll") and (
             gaze_job or scroll_job
         ):

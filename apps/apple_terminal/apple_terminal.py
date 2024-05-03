@@ -14,13 +14,13 @@ directories_to_exclude = {}
 
 @ctx.action_class("edit")
 class EditActions:
-    def delete_line():
+    def delete_line(self):
         actions.key("ctrl-u")
 
 
 @ctx.action_class("user")
 class UserActions:
-    def file_manager_current_path():
+    def file_manager_current_path(self):
         title = ui.active_window().title
 
         # take the first split for the zsh-based terminal
@@ -38,7 +38,7 @@ class UserActions:
 
         return title
 
-    def file_manager_show_properties():
+    def file_manager_show_properties(self):
         """Shows the properties for the file"""
 
     def file_manager_open_directory(path: str):
@@ -51,7 +51,7 @@ class UserActions:
         # jtk - refresh title isn't necessary since the apple terminal does it for us
         # actions.user.file_manager_refresh_title()
 
-    def file_manager_open_parent():
+    def file_manager_open_parent(self):
         actions.insert("cd ..")
         actions.key("enter")
 
@@ -74,7 +74,7 @@ class UserActions:
         """selects the file"""
         actions.insert(path)
 
-    def file_manager_refresh_title():
+    def file_manager_refresh_title(self):
         return
 
 
@@ -83,8 +83,8 @@ class app_actions:
     # other tab functions should already be implemented in
     # code/platforms/mac/app.py
 
-    def tab_previous():
+    def tab_previous(self):
         actions.key("ctrl-shift-tab")
 
-    def tab_next():
+    def tab_next(self):
         actions.key("ctrl-tab")

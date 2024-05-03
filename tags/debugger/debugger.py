@@ -74,70 +74,70 @@ def registers(m) -> str:
 
 @mod.action_class
 class Actions:
-    def debugger_step_into():
+    def debugger_step_into(self):
         """Step into an instruction in the debugger"""
 
-    def debugger_step_over():
+    def debugger_step_over(self):
         """Step over an instruction in the debugger"""
 
-    def debugger_step_line():
+    def debugger_step_line(self):
         """Step into a source line in the debugger"""
 
-    def debugger_step_over_line():
+    def debugger_step_over_line(self):
         """Step over a source line in the debugger"""
 
-    def debugger_step_out():
+    def debugger_step_out(self):
         """Step until function exit in the debugger"""
 
-    def debugger_continue():
+    def debugger_continue(self):
         """Continue execution in the debugger"""
 
-    def debugger_restart():
+    def debugger_restart(self):
         """Restart execution in the debugger"""
 
-    def debugger_start():
+    def debugger_start(self):
         """Start debugging"""
 
-    def debugger_stop():
+    def debugger_stop(self):
         """Stop the debugger"""
 
-    def debugger_exit():
+    def debugger_exit(self):
         """Exit the debugger"""
 
-    def debugger_detach():
+    def debugger_detach(self):
         """Detach the debugger"""
 
-    def debugger_backtrace():
+    def debugger_backtrace(self):
         """Print a back trace in the debugger"""
 
-    def debugger_get_register():
+    def debugger_get_register(self):
         """Print specific register in the debugger"""
 
-    def debugger_set_register():
+    def debugger_set_register(self):
         """Set specific register in the debugger"""
 
-    def debugger_show_registers():
+    def debugger_show_registers(self):
         """Print the current registers in the debugger"""
 
-    def debugger_break_now():
+    def debugger_break_now(self):
         """Break into the debugger"""
 
-    def debugger_break_here():
+    def debugger_break_here(self):
         """Set a break on the current line"""
 
-    def debugger_show_breakpoints():
+    def debugger_show_breakpoints(self):
         """Print the current breakpoints in the debugger"""
 
-    def debugger_add_sw_breakpoint():
+    def debugger_add_sw_breakpoint(self):
         """Add one software breakpoint in the debugger"""
 
-    def debugger_add_hw_breakpoint():
+    def debugger_add_hw_breakpoint(self):
         """Add one hardware breakpoint in the debugger"""
 
-    def debugger_clear_all_breakpoints():
+    def debugger_clear_all_breakpoints(self):
         """Clear all breakpoints in the debugger"""
 
-    def debugger_clear_breakpoint():
+    def debugger_clear_breakpoint(self):
         """Clear one breakpoint in the debugger"""
 
     def debugger_clear_breakpoint_id(number_small: int):
@@ -146,53 +146,53 @@ class Actions:
     def debugger_disable_breakpoint_id(number_small: int):
         """Disable one breakpoint id in the debugger"""
 
-    def debugger_disable_breakpoint():
+    def debugger_disable_breakpoint(self):
         """Disable one breakpoint in the debugger"""
 
-    def debugger_disable_all_breakpoints():
+    def debugger_disable_all_breakpoints(self):
         """Disable all breakpoints in the debugger"""
 
-    def debugger_enable_breakpoint():
+    def debugger_enable_breakpoint(self):
         """Enable one breakpoint in the debugger"""
 
     def debugger_enable_breakpoint_id(number_small: int):
         """Enable one breakpoint id in the debugger"""
 
-    def debugger_enable_all_breakpoints():
+    def debugger_enable_all_breakpoints(self):
         """Enable all breakpoints in the debugger"""
 
-    def debugger_disassemble():
+    def debugger_disassemble(self):
         """Preps the disassemble command in the debugger"""
 
-    def debugger_disassemble_here():
+    def debugger_disassemble_here(self):
         """Disassembles instructions at the current instruction pointer"""
 
-    def debugger_disassemble_clipboard():
+    def debugger_disassemble_clipboard(self):
         """Disassemble instructions at an address in the clipboard"""
 
-    def debugger_goto_address():
+    def debugger_goto_address(self):
         """Jump to a specific address in the debugger"""
 
-    def debugger_goto_clipboard():
+    def debugger_goto_clipboard(self):
         """Jump to a specific address stored in the clipboard"""
 
-    def debugger_goto_highlighted():
+    def debugger_goto_highlighted(self):
         """Jump to a specific highlighted address in the debugger"""
 
-    def debugger_dump_ascii_string():
+    def debugger_dump_ascii_string(self):
         """Display as specific address as an ascii string in the debugger"""
 
-    def debugger_dump_unicode_string():
+    def debugger_dump_unicode_string(self):
         """Display as specific address as an unicode string in the debugger"""
 
-    def debugger_dump_pointers():
+    def debugger_dump_pointers(self):
         """Display as specific address as a list of pointers in the debugger"""
 
-    def debugger_inspect_type():
+    def debugger_inspect_type(self):
         """Inspect a specific data type in the debugger"""
 
-    def debugger_clear_line():
+    def debugger_clear_line(self):
         """Clear unwanted data from the command line"""
 
-    def debugger_list_modules():
+    def debugger_list_modules(self):
         """List the loaded modules in the debuggee memory space"""

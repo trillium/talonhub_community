@@ -336,7 +336,7 @@ class Actions:
                 raise RuntimeError(f"Can't focus app: {app.name}")
             actions.sleep(0.1)
 
-    def switcher_focus_last():
+    def switcher_focus_last(self):
         """Focus last window/application"""
 
     def switcher_focus_window(window: ui.Window):
@@ -373,21 +373,21 @@ class Actions:
         else:
             print("Unhandled platform in switcher_launch: " + app.platform)
 
-    def switcher_menu():
+    def switcher_menu(self):
         """Open a menu of running apps to switch to"""
         if app.platform == "windows":
             actions.key("alt-ctrl-tab")
         else:
             print("Persistent Switcher Menu not supported on " + app.platform)
 
-    def switcher_toggle_running():
+    def switcher_toggle_running(self):
         """Shows/hides all running applications"""
         if gui_running.showing:
             gui_running.hide()
         else:
             gui_running.show()
 
-    def switcher_hide_running():
+    def switcher_hide_running(self):
         """Hides list of running applications"""
         gui_running.hide()
 
