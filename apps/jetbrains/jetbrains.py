@@ -3,9 +3,8 @@ import os.path
 import tempfile
 import time
 from pathlib import Path
-
-import requests
 from talon import Context, Module, actions, clip, ui
+from security import safe_requests
 
 # Courtesy of https://github.com/anonfunc/talon-user/blob/master/apps/jetbrains.py
 
@@ -86,7 +85,7 @@ def send_idea_command(cmd):
     proxies = {"http": None, "https": None}
     print(f"sending {bundle} {port} {nonce}")
     if port and nonce:
-        response = requests.get(
+        response = safe_requests.get(
             f"http://localhost:{port}/{nonce}/{cmd}",
             proxies=proxies,
             timeout=(0.05, 3.05),
