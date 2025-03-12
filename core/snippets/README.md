@@ -7,7 +7,7 @@ Custom format to represent snippets.
 - Custom file ending `.snippet`.
 - Supports syntax highlighting in VSCode via an [extension](https://marketplace.visualstudio.com/items?itemName=AndreasArvidsson.andreas-talon)
 - Supports auto-formatting in VSCode via an [extension](https://marketplace.visualstudio.com/items?itemName=AndreasArvidsson.andreas-talon)
-- Support for insertion and wrapper snippets. Note that while the snippet file syntax here supports wrapper snippets, we still need to add the proper voice commands; stay tuned.
+- Support for insertion and wrapper snippets. Note that while the snippet file syntax here supports wrapper snippets, you will need to install [Cursorless](https://www.cursorless.org/) for wrapper snippets to work.
 - Support for phrase formatters.
 
 ## Format
@@ -24,6 +24,7 @@ Custom format to represent snippets.
 | Key            | Required | Multiple values | Example                        |
 | -------------- | -------- | --------------- | ------------------------------ |
 | name           | Yes      | No              | `name: ifStatement`            |
+| description    | No       | No              | `description: My snippet`      |
 | language       | No       | Yes             | `language: javascript \| java` |
 | phrase         | No       | Yes             | `phrase: if \| if state`       |
 | insertionScope | No       | Yes             | `insertionScope: statement`    |
@@ -40,7 +41,7 @@ It's also possible to set configuration that applies to a specific tab stop (`$0
 
 ## Formatting and syntax highlighting
 
-To get formatting and syntax highlighting for `.snippet` files install [andreas-talon](https://marketplace.visualstudio.com/items?itemName=AndreasArvidsson.andreas-talon)
+To get formatting, code completion and syntax highlighting for `.snippet` files: install [andreas-talon](https://marketplace.visualstudio.com/items?itemName=AndreasArvidsson.andreas-talon)
 
 ## Examples
 
